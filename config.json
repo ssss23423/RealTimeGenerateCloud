@@ -1,0 +1,22 @@
+{
+    "global": {
+        "logDir": "/data/project/GenerateCloud/data/logs",
+        "datatype": "bil",
+        "imageWidth": 1280,
+        "imageHeight": 800
+    },
+    "reconstruction": {
+        "dataDir": "/data/project/GenerateCloud/data/imgs",
+        "outputCloudDir": "/data/project/GenerateCloud/data/clouds",
+        "minThreshold": 100
+    },
+    "calibration": {
+        "caltabDescription": "/data/project/GenerateCloud/data/caltab_400.descr",
+        "caltabImagesDir": "/data/project/GenerateCloud/data/caltab",
+        "imageCount": 59,
+        "minThreshold": 169,
+        "stepCount": 60,
+        "thickness": 0.01,
+        "maxLightPlaneError": 0.05
+    }
+}
