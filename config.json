@@ -1,12 +1,21 @@
 {
     "global": {
-        "logDir": "/data/project/GenerateCloud/data/logs",
-        "datatype": "bil",
+        "datatype": ".bil.zst",
         "imageWidth": 1280,
-        "imageHeight": 800
+        "imageHeight": 800,
+        "fps": 120
+    },
+    "camera": {
+        "cx": 665.103,
+        "cy": 412.286,
+        "sx": 4.68544e-06,
+        "sy": 4.7e-06,
+        "focus": 0.0111401
     },
     "reconstruction": {
-        "dataDir": "/data/project/GenerateCloud/data/imgs",
+        "imageDataDir": "/data/project/GenerateCloud/data/imgs/bil_zst/2025-04-20_10-21-07.bil.zst",
+        "parsedInsData": "/data/project/GenerateCloud/data/ins/parsed/parsed_check_fix_ins.xlsx",
+        "parsedLogData": "/data/project/GenerateCloud/data/logs/parsed/output.csv",
         "outputCloudDir": "/data/project/GenerateCloud/data/clouds",
         "minThreshold": 100
     },

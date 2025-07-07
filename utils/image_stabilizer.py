@@ -4,7 +4,15 @@ import numpy as np
 
 class ImageStabilizer:
 
-    def __init__(self, cx, cy, sx, sy, focus):
+    def __init__(
+        self,
+        cx,
+        cy,
+        sx,
+        sy,
+        focus,
+        R_body_to_cam=np.array([[-1, 0, 0], [0, -1, 0], [0, 0, 1]]),
+    ):
         """
         :param cx: pixel
         :param cy: pixel
@@ -12,6 +20,7 @@ class ImageStabilizer:
         :param sy: m/pixel
         :param focus: m
         """
+        print(f"[Image Stabilizer] loading...")
         self.cx = cx
         self.cy = cy
         self.sx = sx
@@ -19,6 +28,7 @@ class ImageStabilizer:
         self.focus = focus
 
         self.K = self._calculate_intrinsics_from_halcon()
+        self.R_body_to_cam = R_body_to_cam
 
     def _calculate_intrinsics_from_halcon(self):
         self.fx = self.focus / self.sx
@@ -57,30 +67,8 @@ class ImageStabilizer:
         h, w = img.shape[:2]
 
         R_ned_to_body = self.euler_to_rotation_matrix(roll, pitch, yaw, degrees)
-        R_body_to_cam = self.euler_to_rotation_matrix(0, 0, 0, degrees)
 
-        R_ned_to_cam = R_body_to_cam @ R_ned_to_body
+        R_ned_to_cam = self.R_body_to_cam @ R_ned_to_body
         H = self.K @ R_ned_to_cam @ np.linalg.inv(self.K)
         corrected_img = cv2.warpPerspective(img, H, (w, h))
         return corrected_img
-
-
-# if __name__ == "__main__":
-#     stabilizer = ImageStabilizer(
-#         cx=664.923, cy=411.884, sx=4.68544e-06, sy=4.7e-06, focus=0.0111401
-#     )
-#     # image = cv2.imread("data/imgs/imgs/2025-04-20_12-41-08/1.png")
-
-#     # roll = -5.5810546875
-#     # pitch = -5.16357421875
-#     # yaw = 0
-
-#     image = cv2.imread("data/imgs/imgs/2025-04-20_10-21-07/1.png")
-
-#     roll = -5.82275390625
-#     pitch = -2.2796630859375
-#     yaw = 0
-
-#     corrected = stabilizer.correct_image(image, roll, pitch, yaw)
-
-#     cv2.imwrite("test1.png", corrected)

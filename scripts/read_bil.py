@@ -4,11 +4,20 @@ import numpy as np
 from natsort import natsorted
 import zstandard as zstd
 
+from image_stabilizer import ImageStabilizer
+
 
 class BilReader:
 
     def __init__(
-        self, path, width=1280, height=800, fps=120, file_ext=".bil", output_ext=".mp4"
+        self,
+        path,
+        width=1280,
+        height=800,
+        fps=120,
+        file_ext=".bil",
+        output_ext=".mp4",
+        is_correct=False,
     ):
         self.width = width
         self.height = height
@@ -21,6 +30,13 @@ class BilReader:
         self.files = self._gather_files()
 
         self.frame_count = 1
+
+        if is_correct is True:
+            self.image_stabilizer = ImageStabilizer(
+                cx=664.923, cy=411.884, sx=4.68544e-06, sy=4.7e-06, focus=0.0111401
+            )
+        else:
+            self.image_stabilizer = None
 
     def _gather_files(self):
         if os.path.isfile(self.path):
@@ -107,6 +123,12 @@ class BilReader:
                     img = np.frombuffer(chunk, dtype=np.uint8).reshape(
                         self.height, self.width
                     )
+
+                    if self.image_stabilizer is not None:
+                        img = self.image_stabilizer.correct_image(
+                            img, -5.82275390625, -2.2796630859375, 177.681884765625
+                        )
+
                     video_writer.write(img)
 
         video_writer.release()
@@ -200,8 +222,10 @@ class BilReader:
 
 if __name__ == "__main__":
     reader = BilReader(
-        path="data/imgs/bil_zst/2025-04-20_10-21-07.bil.zst",
+        path="data/imgs/bil_zst/2025-04-20_12-41-08.bil.zst",
         file_ext=".bil.zst",
         output_ext=".png",
+        is_correct=True,
     )
     reader.convert("data/imgs/imgs")
+    print("Finished!")
