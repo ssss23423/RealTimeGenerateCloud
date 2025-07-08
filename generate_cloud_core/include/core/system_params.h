@@ -18,20 +18,21 @@ using json = nlohmann::json;
 struct hvProgramParams
 {
     // Data path
-    HTuple hv_data_root;
-    HTuple hv_calibration_images_path;
+    HTuple hv_reconstruction_image_data_path;
+    HTuple hv_calibration_images_dir;
+    HTuple hv_reconstruction_poses;
     HTuple hv_laser1_path;
     HTuple hv_laser2_path;
     HTuple hv_movement1_path;
     HTuple hv_movement2_path;
     HTuple hv_caltab_description_path;
-    HTuple hv_output_cloud_root;
+    HTuple hv_reconstruction_output_clouds_dir;
     std::vector<HTuple> hv_output_cloud_paths;
 
     // Calibration parameters
-    HTuple hv_calibration_images_num;
+    HTuple hv_calibration_image_count;
     HTuple hv_calibration_min_threshold;
-    HTuple hv_calibration_steps_num;
+    HTuple hv_calibration_step_count;
     HTuple hv_calibration_thickness;
     HTuple hv_calibration_max_light_plane_error;
 
@@ -92,6 +93,7 @@ public:
     int img_width_;
     int img_height_;
     int img_size_;
+    int fps_;
 
     int total_valid_files_ = 0;
     std::vector<std::string> valid_files_;

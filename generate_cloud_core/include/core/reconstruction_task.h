@@ -13,7 +13,7 @@ public:
 private:
     void run() override;
 
-    void findBilData();
+    void findDatafiles();
     void reconstruction();
     void extractLaser(const HObject &ho_image, HObject *ho_laser_image, const HTuple &hv_min_threshold);
     void resizeImage(const HObject &ho_image_part, const HTuple &hv_width,

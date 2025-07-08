@@ -68,21 +68,21 @@ void CalibrationTask::calibrate()
 
     CreateCalibData("calibration_object", 1, 1, &hv_calib_data_id);
     SetCalibDataCamParam(hv_calib_data_id, 0, HTuple(), hv_start_parameters);
-    SetCaliibDataCalibObject(hv_calib_data_id, 0, SystemParams::instance().hv_program_params_.hv_caltab_description_path);
+    SetCalibDataCalibObject(hv_calib_data_id, 0, SystemParams::instance().hv_program_params_.hv_caltab_description_path);
 
     // Collect mark positions and estimated poses for all calibration images
     HObject ho_image;
     HTuple hv_idx, hv_row, hv_col, hv_idx_d;
     HTuple hv_pose, hv_camera_calibration_error;
-    HTuple end_idx = SystemParams::instance().hv_program_params_.hv_calibration_images_num;
+    HTuple end_idx = SystemParams::instance().hv_program_params_.hv_calibration_image_count;
     HTuple step_idx = 1;
     int error_images_num = 0;
     for (hv_idx = 1; hv_idx.Continue(end_idx, step_idx); hv_idx += step_idx)
     {
         try
         {
-            ReadImage(&ho_image, SystemParams::instance().hv_program_params_.hv_calibration_images_path + hv_idx.TupleString(".2"));
-            std::string msg = "Perform the calibration of the camera: " + std::to_string(hv_idx[0].I()) + "/" + std::to_string(SystemParams::instance().hv_program_params_.hv_calibration_images_num[0].I());
+            ReadImage(&ho_image, SystemParams::instance().hv_program_params_.hv_calibration_images_dir + hv_idx.TupleString(".2"));
+            std::string msg = "Perform the calibration of the camera: " + std::to_string(hv_idx[0].I()) + "/" + std::to_string(SystemParams::instance().hv_program_params_.hv_calibration_image_count[0].I());
             Logger::instance().log(msg);
             FindCalibObject(ho_image, hv_calib_data_id, 0, 0, hv_idx, HTuple(), HTuple());
             GetCalibDataObservPoints(hv_calib_data_id, 0, 0, hv_idx, &hv_row, &hv_col, &hv_idx_d, &hv_pose);
@@ -91,7 +91,7 @@ void CalibrationTask::calibrate()
         {
             error_images_num++;
             std::string msg1 = "Error " + std::to_string(exception.ErrorCode()) + " in " + exception.ProcName().Text() + ": " + exception.ErrorMessage().Text();
-            std::string msg2 = std::string("Skip ") + (SystemParams::instance().hv_program_params_.hv_calibration_images_path + hv_idx.TupleString(".2")).S().Text();
+            std::string msg2 = std::string("Skip ") + (SystemParams::instance().hv_program_params_.hv_calibration_images_dir + hv_idx.TupleString(".2")).S().Text();
             Logger::instance().log(msg1, LogLevel::Error);
             Logger::instance().log(msg2, LogLevel::Warn);
         }
@@ -110,8 +110,8 @@ void CalibrationTask::calibrate()
     // of the pose that corresponds to the chosen calibration image
     HObject ho_caltab_image1, ho_caltab_image2;
     HTuple hv_caltab_pose;
-    hv_idx = SystemParams::instance().hv_program_params_.hv_calibration_images_num - 1;
-    HTuple ho_caltab_image1_path = SystemParams::instance().hv_program_params_.hv_calibration_images_path + hv_idx.TupleString(".2");
+    hv_idx = SystemParams::instance().hv_program_params_.hv_calibration_image_count - 1;
+    HTuple ho_caltab_image1_path = SystemParams::instance().hv_program_params_.hv_calibration_images_dir + hv_idx.TupleString(".2");
     GetCalibData(hv_calib_data_id, "calib_obj_pose", HTuple(0).TupleConcat(hv_idx), "pose", &hv_caltab_pose);
     SetOriginPose(hv_caltab_pose, 0.0, 0.0, SystemParams::instance().hv_program_params_.hv_calibration_thickness, &SystemParams::instance().hv_system_poses_.hv_camera_pose);
     ReadImage(&ho_caltab_image1, ho_caltab_image1_path);
@@ -123,8 +123,8 @@ void CalibrationTask::calibrate()
     // the coordinate system in order to take the thickness
     // of the calibration table into account.
     HTuple hv_tmp_camera_pose;
-    hv_idx = SystemParams::instance().hv_program_params_.hv_calibration_images_num;
-    HTuple ho_caltab_image2_path = SystemParams::instance().hv_program_params_.hv_calibration_images_path + hv_idx.TupleString(".2");
+    hv_idx = SystemParams::instance().hv_program_params_.hv_calibration_image_count;
+    HTuple ho_caltab_image2_path = SystemParams::instance().hv_program_params_.hv_calibration_images_dir + hv_idx.TupleString(".2");
     GetCalibData(hv_calib_data_id, "calib_obj_pose", HTuple(0).TupleConcat(hv_idx), "pose", &hv_caltab_pose);
     SetOriginPose(hv_caltab_pose, 0.0, 0.0, SystemParams::instance().hv_program_params_.hv_calibration_thickness, &hv_tmp_camera_pose);
     ReadImage(&ho_caltab_image2, ho_caltab_image2_path);
@@ -201,15 +201,15 @@ void CalibrationTask::calibrate()
 
     // Compute the pose of the calibration table in each image
     FindCalibObject(ho_caltab_image_pos1, hv_calib_data_id, 0, 0,
-                    SystemParams::instance().hv_program_params_.hv_calibration_images_num + 1, HTuple(), HTuple());
+                    SystemParams::instance().hv_program_params_.hv_calibration_image_count + 1, HTuple(), HTuple());
 
     // Extract the unoptimized pose from the calibration data model
     HTuple hv_row1, hv_col1, hv_idx1, hv_camera_pose_pos1, hv_camera_pose_pos2;
-    GetCalibDataObservPoints(hv_calib_data_id, 0, 0, SystemParams::instance().hv_program_params_.hv_calibration_images_num + 1,
+    GetCalibDataObservPoints(hv_calib_data_id, 0, 0, SystemParams::instance().hv_program_params_.hv_calibration_image_count + 1,
                              &hv_row1, &hv_col1, &hv_idx1, &hv_camera_pose_pos1);
     FindCalibObject(ho_caltab_image_pos2, hv_calib_data_id, 0, 0,
-                    SystemParams::instance().hv_program_params_.hv_calibration_images_num + 2, HTuple(), HTuple());
-    GetCalibDataObservPoints(hv_calib_data_id, 0, 0, SystemParams::instance().hv_program_params_.hv_calibration_images_num + 2,
+                    SystemParams::instance().hv_program_params_.hv_calibration_image_count + 2, HTuple(), HTuple());
+    GetCalibDataObservPoints(hv_calib_data_id, 0, 0, SystemParams::instance().hv_program_params_.hv_calibration_image_count + 2,
                              &hv_row1, &hv_col1, &hv_idx1, &hv_camera_pose_pos2);
 
     // Compute the coordinates of the origin of the calibration table in the two positions with respect to the world coordinate system and determine the coordinates of the corresponding translation vector
@@ -230,7 +230,7 @@ void CalibrationTask::calibrate()
     AffineTransPoint3d(hv_hom_mat_3d_pos1_to_world, 0, 0, 0, &hv_start_x, &hv_start_y, &hv_start_z);
     AffineTransPoint3d(hv_hom_mat_3d_pos2_to_world, 0, 0, 0, &hv_end_x, &hv_end_y, &hv_end_z);
     CreatePose(hv_end_x - hv_start_x, hv_end_y - hv_start_y, hv_end_z - hv_start_z, 0, 0, 0, "Rp+T", "gba", "point", &hv_movement_pose_nsteps);
-    SystemParams::instance().hv_system_poses_.hv_movement_poses = hv_movement_pose_nsteps / SystemParams::instance().hv_program_params_.hv_calibration_steps_num;
+    SystemParams::instance().hv_system_poses_.hv_movement_poses = hv_movement_pose_nsteps / SystemParams::instance().hv_program_params_.hv_calibration_step_count;
     Logger::instance().log("The light movement pose has been performed successfully!");
 }
 
@@ -261,15 +261,15 @@ void CalibrationTask::calibrateCamera(HTuple &hv_calibration_data_id)
     HObject ho_image;
     HTuple hv_idx, hv_row, hv_col, hv_idx_d;
     HTuple hv_pose, hv_camera_calibration_error;
-    HTuple end_idx = SystemParams::instance().hv_program_params_.hv_calibration_images_num;
+    HTuple end_idx = SystemParams::instance().hv_program_params_.hv_calibration_image_count;
     HTuple step_idx = 1;
     int error_images_num = 0;
     for (hv_idx = 1; hv_idx.Continue(end_idx, step_idx); hv_idx += step_idx)
     {
         try
         {
-            ReadImage(&ho_image, SystemParams::instance().hv_program_params_.hv_calibration_images_path + hv_idx.TupleString(".2"));
-            std::string msg = "Perform the calibration of the camera: " + std::to_string(hv_idx[0].I()) + "/" + std::to_string(SystemParams::instance().hv_program_params_.hv_calibration_images_num[0].I());
+            ReadImage(&ho_image, SystemParams::instance().hv_program_params_.hv_calibration_images_dir + "/caltab" + hv_idx.TupleString(".2"));
+            std::string msg = "Perform the calibration of the camera: " + std::to_string(hv_idx[0].I()) + "/" + std::to_string(SystemParams::instance().hv_program_params_.hv_calibration_image_count[0].I());
             Logger::instance().log(msg);
             FindCalibObject(ho_image, hv_calibration_data_id, 0, 0, hv_idx, HTuple(), HTuple());
             GetCalibDataObservPoints(hv_calibration_data_id, 0, 0, hv_idx, &hv_row, &hv_col, &hv_idx_d, &hv_pose);
@@ -278,7 +278,7 @@ void CalibrationTask::calibrateCamera(HTuple &hv_calibration_data_id)
         {
             error_images_num++;
             std::string msg1 = "Error " + std::to_string(exception.ErrorCode()) + " in " + exception.ProcName().Text() + ": " + exception.ErrorMessage().Text();
-            std::string msg2 = std::string("Skip ") + (SystemParams::instance().hv_program_params_.hv_calibration_images_path + hv_idx.TupleString(".2")).S().Text();
+            std::string msg2 = std::string("Skip ") + (SystemParams::instance().hv_program_params_.hv_calibration_images_dir + hv_idx.TupleString(".2")).S().Text();
             Logger::instance().log(msg1, LogLevel::Error);
             Logger::instance().log(msg2, LogLevel::Warn);
         }
@@ -311,8 +311,8 @@ void CalibrationTask::calibrateLightPlane(HTuple &hv_calibration_data_id)
     // Definition of the world coordinate system (WCS)
     HObject ho_caltab_image1, ho_caltab_image2;
     HTuple hv_caltab_pose;
-    HTuple hv_idx = SystemParams::instance().hv_program_params_.hv_calibration_images_num - 1;
-    HTuple ho_caltab_image1_path = SystemParams::instance().hv_program_params_.hv_calibration_images_path + hv_idx.TupleString(".2");
+    HTuple hv_idx = SystemParams::instance().hv_program_params_.hv_calibration_image_count - 1;
+    HTuple ho_caltab_image1_path = SystemParams::instance().hv_program_params_.hv_calibration_images_dir + "/caltab" + hv_idx.TupleString(".2");
     GetCalibData(hv_calibration_data_id, "calib_obj_pose", HTuple(0).TupleConcat(hv_idx), "pose", &hv_caltab_pose);
     SetOriginPose(hv_caltab_pose, 0.0, 0.0, SystemParams::instance().hv_program_params_.hv_calibration_thickness, &SystemParams::instance().hv_system_poses_.hv_camera_pose);
     ReadImage(&ho_caltab_image1, ho_caltab_image1_path);
@@ -320,8 +320,8 @@ void CalibrationTask::calibrateLightPlane(HTuple &hv_calibration_data_id)
 
     // Definition of a temporary coordinate system (TCS)
     HTuple hv_tmp_camera_pose;
-    hv_idx = SystemParams::instance().hv_program_params_.hv_calibration_images_num;
-    HTuple ho_caltab_image2_path = SystemParams::instance().hv_program_params_.hv_calibration_images_path + hv_idx.TupleString(".2");
+    hv_idx = SystemParams::instance().hv_program_params_.hv_calibration_image_count;
+    HTuple ho_caltab_image2_path = SystemParams::instance().hv_program_params_.hv_calibration_images_dir + "/caltab" + hv_idx.TupleString(".2");
     GetCalibData(hv_calibration_data_id, "calib_obj_pose", HTuple(0).TupleConcat(hv_idx), "pose", &hv_caltab_pose);
     SetOriginPose(hv_caltab_pose, 0.0, 0.0, SystemParams::instance().hv_program_params_.hv_calibration_thickness, &hv_tmp_camera_pose);
     ReadImage(&ho_caltab_image2, ho_caltab_image2_path);
@@ -399,15 +399,15 @@ void CalibrationTask::calibrateMovement(HTuple &hv_calibration_data_id)
 
     // Compute the pose of the calibration table in each image
     FindCalibObject(ho_caltab_image_pos1, hv_calibration_data_id, 0, 0,
-                    SystemParams::instance().hv_program_params_.hv_calibration_images_num + 1, HTuple(), HTuple());
+                    SystemParams::instance().hv_program_params_.hv_calibration_image_count + 1, HTuple(), HTuple());
 
     // Extract the unoptimized pose from the calibration data model
     HTuple hv_row1, hv_col1, hv_idx1, hv_camera_pose_pos1, hv_camera_pose_pos2;
-    GetCalibDataObservPoints(hv_calibration_data_id, 0, 0, SystemParams::instance().hv_program_params_.hv_calibration_images_num + 1,
+    GetCalibDataObservPoints(hv_calibration_data_id, 0, 0, SystemParams::instance().hv_program_params_.hv_calibration_image_count + 1,
                              &hv_row1, &hv_col1, &hv_idx1, &hv_camera_pose_pos1);
     FindCalibObject(ho_caltab_image_pos2, hv_calibration_data_id, 0, 0,
-                    SystemParams::instance().hv_program_params_.hv_calibration_images_num + 2, HTuple(), HTuple());
-    GetCalibDataObservPoints(hv_calibration_data_id, 0, 0, SystemParams::instance().hv_program_params_.hv_calibration_images_num + 2,
+                    SystemParams::instance().hv_program_params_.hv_calibration_image_count + 2, HTuple(), HTuple());
+    GetCalibDataObservPoints(hv_calibration_data_id, 0, 0, SystemParams::instance().hv_program_params_.hv_calibration_image_count + 2,
                              &hv_row1, &hv_col1, &hv_idx1, &hv_camera_pose_pos2);
 
     // Compute the coordinates of the origin of the calibration table in the two positions with respect to the world coordinate system and determine the coordinates of the corresponding translation vector
@@ -428,7 +428,7 @@ void CalibrationTask::calibrateMovement(HTuple &hv_calibration_data_id)
     AffineTransPoint3d(hv_hom_mat_3d_pos1_to_world, 0, 0, 0, &hv_start_x, &hv_start_y, &hv_start_z);
     AffineTransPoint3d(hv_hom_mat_3d_pos2_to_world, 0, 0, 0, &hv_end_x, &hv_end_y, &hv_end_z);
     CreatePose(hv_end_x - hv_start_x, hv_end_y - hv_start_y, hv_end_z - hv_start_z, 0, 0, 0, "Rp+T", "gba", "point", &hv_movement_pose_nsteps);
-    SystemParams::instance().hv_system_poses_.hv_movement_poses = hv_movement_pose_nsteps / SystemParams::instance().hv_program_params_.hv_calibration_steps_num;
+    SystemParams::instance().hv_system_poses_.hv_movement_poses = hv_movement_pose_nsteps / SystemParams::instance().hv_program_params_.hv_calibration_step_count;
     Logger::instance().log("The light movement pose has been performed successfully!");
 }
 
@@ -436,7 +436,7 @@ void CalibrationTask::saveToFile()
 {
     // Save the calibration parameters
     // Create "Saved Poses" directory if it don't exist.
-    HTuple hv_saved_poses_dir = SystemParams::instance().hv_program_params_.hv_data_root + "/saved_poses";
+    HTuple hv_saved_poses_dir = SystemParams::instance().hv_program_params_.hv_reconstruction_poses;
     if (!std::filesystem::exists(hv_saved_poses_dir[0].S().Text()))
     {
         std::filesystem::create_directories(hv_saved_poses_dir[0].S().Text());

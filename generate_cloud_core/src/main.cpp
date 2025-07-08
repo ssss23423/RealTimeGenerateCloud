@@ -21,21 +21,27 @@ void runCliMode(const cmdline::parser &parser)
 
     std::string json_config_path = parser.get<std::string>("json-config");
 
-    TaskManager &task_manager = TaskManagerImpl::instance();
-    task_manager.start();
+    TaskManagerImpl::instance().start();
 
     SystemParams::init(json_config_path, RunMode::Cli);
 
     if (SystemParams::instance().calibration_flag_)
     {
         auto calibration_task = new CalibrationTask(3);
-        task_manager.startTask(calibration_task->getId(), calibration_task);
+        TaskManagerImpl::instance().startTask(calibration_task->getId(), calibration_task);
+        while (!calibration_task->isFinished())
+        {
+        }
     }
 
     auto reconstruction_task = new ReconstructionTask(2);
-    task_manager.startTask(reconstruction_task->getId(), reconstruction_task);
+    TaskManagerImpl::instance().startTask(reconstruction_task->getId(), reconstruction_task);
 
-    task_manager.stop();
+    while (!reconstruction_task->isFinished())
+    {
+    }
+
+    TaskManagerImpl::instance().stop();
 }
 
 int main(int argc, char *argv[])
@@ -43,7 +49,7 @@ int main(int argc, char *argv[])
     cmdline::parser parser;
     parser.add("ui", 'u', "Run in UI mode");
     parser.add("cli", 'c', "Run in CLI mode");
-    parser.add<std::string>("json-config", 'j', "Config path", false, "config.json");
+    parser.add<std::string>("json-config", 'j', "Config path", false, "/data/project/GenerateCloud/config.json");
 
     parser.parse_check(argc, argv);
 

@@ -13,19 +13,29 @@
         "focus": 0.0111401
     },
     "reconstruction": {
-        "imageDataDir": "/data/project/GenerateCloud/data/imgs/bil_zst/2025-04-20_10-21-07.bil.zst",
+        "imageData": "/data/project/GenerateCloud/data/imgs/corrected/2025-04-20_10-21-07.bil",
         "parsedInsData": "/data/project/GenerateCloud/data/ins/parsed/parsed_check_fix_ins.xlsx",
         "parsedLogData": "/data/project/GenerateCloud/data/logs/parsed/output.csv",
-        "outputCloudDir": "/data/project/GenerateCloud/data/clouds",
-        "minThreshold": 100
+        "poses": "/data/project/GenerateCloud/data/saved_poses",
+        "outputCloudsDir": "/data/project/GenerateCloud/data/clouds",
+        "minThreshold": 100,
+        "roiRow1": 0,
+        "roiCol1": 0,
+        "roiRow2": 0,
+        "roiCol2": 0
     },
     "calibration": {
         "caltabDescription": "/data/project/GenerateCloud/data/caltab_400.descr",
         "caltabImagesDir": "/data/project/GenerateCloud/data/caltab",
         "imageCount": 59,
         "minThreshold": 169,
-        "stepCount": 60,
+        "stepCount": 45,
         "thickness": 0.01,
         "maxLightPlaneError": 0.05
+    },
+    "mode": {
+        "saveCloudFlag": true,
+        "setRoiFlag": false,
+        "selectEntireFrame": true
     }
 }

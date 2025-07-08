@@ -19,7 +19,7 @@ void ReconstructionTask::run()
             return;
         }
 
-        this->findBilData();
+        this->findDatafiles();
 
         if (SystemParams::instance().valid_files_.empty())
         {
@@ -37,69 +37,101 @@ void ReconstructionTask::run()
     }
 }
 
-void ReconstructionTask::findBilData()
+void ReconstructionTask::findDatafiles()
 {
     const std::streampos img_size = SystemParams::instance().img_width_ * SystemParams::instance().img_height_;
     namespace fs = std::filesystem;
 
     size_t file_count = 0;
     std::uintmax_t total_size = 0;
-    size_t total_frame_counts = 0;
-    std::string bil_data_dir = std::string(SystemParams::instance().hv_program_params_.hv_data_root[0].S().Text()) + "/bil";
+    size_t total_frame_count = 0;
+    std::string data_input = SystemParams::instance().hv_program_params_.hv_reconstruction_image_data_path[0].S().Text();
 
     try
     {
         Logger::instance().log("Start to find .bil files");
-        if (!SystemParams::instance().valid_files_.empty())
+        SystemParams::instance().valid_files_.clear();
+        SystemParams::instance().frame_count_.clear();
+
+        std::vector<fs::path> files_to_process;
+        fs::path input_path(data_input);
+        if (!fs::exists(input_path))
         {
-            SystemParams::instance().valid_files_.clear();
+            Logger::instance().log("Path does not exist: " + data_input, LogLevel::Error);
+            return;
         }
-        for (const auto &entry : fs::recursive_directory_iterator(bil_data_dir))
+
+        if (fs::is_directory(input_path))
         {
-            if (running_.load())
+            for (const auto &entry : fs::recursive_directory_iterator(input_path))
             {
+                if (!running_.load())
+                {
+                    break;
+                }
                 if (!entry.is_regular_file())
                 {
                     continue;
                 }
 
-                const fs::path &path = entry.path();
-                if (path.extension() != ".bil")
+                fs::path filepath = entry.path();
+                if (filepath.filename().string().ends_with(".bil"))
                 {
-                    continue;
+                    files_to_process.push_back(filepath);
                 }
-                std::string normalized_path = path.string();
-                std::replace(normalized_path.begin(), normalized_path.end(), '\\', '/');
-                SystemParams::instance().valid_files_.emplace_back(std::move(normalized_path));
-
-                std::uintmax_t file_size = fs::file_size(path);
-                if (file_size % img_size != 0)
-                {
-                    std::string msg = "File " + normalized_path + " size is not divisible by image size.";
-                    Logger::instance().log(msg, LogLevel::Warn);
-                    // continue;
-                }
-
-                int frame_counts = static_cast<int>(file_size / img_size);
-                SystemParams::instance().frame_count_.emplace_back(frame_counts);
-
-                file_count++;
-                total_size += file_size;
-                total_frame_counts += frame_counts;
-
-                std::string msg = "[BIL FILE] " + path.filename().string() + " | Size: " + std::to_string(file_size) + " bytes | Frames: " + std::to_string(frame_counts);
-                Logger::instance().log(msg);
             }
+        }
+        else if (fs::is_regular_file(input_path))
+        {
+            if (input_path.filename().string().ends_with(".bil"))
+            {
+                files_to_process.push_back(input_path);
+            }
+        }
+        else
+        {
+            Logger::instance().log("Unsupported path type: " + data_input, LogLevel::Error);
+            return;
+        }
+
+        for (const auto &path : files_to_process)
+        {
+            std::string normalized_path = path.string();
+            std::replace(normalized_path.begin(), normalized_path.end(), '\\', '/');
+
+            SystemParams::instance().valid_files_.emplace_back(normalized_path);
+
+            std::uintmax_t file_size = fs::file_size(path);
+            int frame_count = -1;
+
+            if (file_size % img_size != 0)
+            {
+                Logger::instance().log("File " + normalized_path + " size is not divisible by image size.", LogLevel::Warn);
+            }
+            frame_count = static_cast<int>(file_size / img_size);
+
+            SystemParams::instance().frame_count_.emplace_back(frame_count);
+            file_count++;
+            total_size += file_size;
+            if (frame_count > 0)
+            {
+                total_frame_count += frame_count;
+            }
+
+            std::string msg = "[DATA FILE] " + path.filename().string() +
+                              " | Size: " + std::to_string(file_size) +
+                              " bytes | Frames: " + (frame_count >= 0 ? std::to_string(frame_count) : "Unknown");
+            Logger::instance().log(msg);
         }
 
         SystemParams::instance().total_valid_files_ = file_count;
         Logger::instance().log("[BIL FILE] Total .bil files: " + std::to_string(file_count));
         Logger::instance().log("[BIL FILE] Total size (bytes): " + std::to_string(total_size));
-        Logger::instance().log("[BIL FILE] Total frames: " + std::to_string(total_frame_counts));
+        Logger::instance().log("[BIL FILE] Total frames: " + std::to_string(total_frame_count));
     }
     catch (const std::exception &e)
     {
-        std::string msg = std::string("Error in findBilData: ") + e.what();
+        std::string msg = std::string("Error in findDatafiles: ") + e.what();
         throw std::runtime_error(msg);
         Logger::instance().log(msg, LogLevel::Error);
     }
@@ -168,33 +200,36 @@ void ReconstructionTask::reconstruction()
 
                 for (size_t frame = 0; frame < SystemParams::instance().frame_count_[file_idx]; frame++)
                 {
-                    if (running_.load())
+                    std::string msg = "Processing: " + std::to_string(frame + 1) + "/" + std::to_string(SystemParams::instance().frame_count_[file_idx]) + " frames";
+                    Logger::instance().log(msg);
+                    if (!running_.load())
                     {
-                        std::streampos offset = frame * img_size;
-                        bil_file.seekg(offset, std::ios::beg);
-                        std::vector<uint8_t> img_data(img_size);
-                        bil_file.read(reinterpret_cast<char *>(img_data.data()), img_size);
-                        if (bil_file.gcount() < img_size)
-                        {
-                            std::string msg = "Error reading frame " + std::to_string(frame) + " from " + SystemParams::instance().valid_files_[file_idx];
-                            Logger::instance().log(msg, LogLevel::Warn);
-                            break;
-                        }
-                        cv::Mat temp_img(img_height, img_width, CV_8UC1, img_data.data());
-                        this->matToHObject(temp_img, &ho_image);
-                        CropRectangle1(ho_image, &ho_image_part,
-                                       SystemParams::instance().hv_program_params_.hv_reconstruction_roi_row1,
-                                       SystemParams::instance().hv_program_params_.hv_reconstruction_roi_col1,
-                                       SystemParams::instance().hv_program_params_.hv_reconstruction_roi_row2,
-                                       SystemParams::instance().hv_program_params_.hv_reconstruction_roi_col2);
-                        this->extractLaser(ho_image_part, &ho_laser_image, SystemParams::instance().hv_program_params_.hv_reconstruction_min_threshold);
-
-                        // Putting the cropped ROI area back into the original image
-                        this->resizeImage(ho_laser_image, hv_width, hv_height, &ho_final_image,
-                                          SystemParams::instance().hv_program_params_.hv_reconstruction_roi_row1,
-                                          SystemParams::instance().hv_program_params_.hv_reconstruction_roi_col1);
-                        MeasureProfileSheetOfLight(ho_final_image, hv_sheet_of_light_model_id, HTuple());
+                        break;
                     }
+                    std::streampos offset = frame * img_size;
+                    bil_file.seekg(offset, std::ios::beg);
+                    std::vector<uint8_t> img_data(img_size);
+                    bil_file.read(reinterpret_cast<char *>(img_data.data()), img_size);
+                    if (bil_file.gcount() < img_size)
+                    {
+                        std::string msg = "Error reading frame " + std::to_string(frame) + " from " + SystemParams::instance().valid_files_[file_idx];
+                        Logger::instance().log(msg, LogLevel::Warn);
+                        break;
+                    }
+                    cv::Mat temp_img(img_height, img_width, CV_8UC1, img_data.data());
+                    this->matToHObject(temp_img, &ho_image);
+                    CropRectangle1(ho_image, &ho_image_part,
+                                   SystemParams::instance().hv_program_params_.hv_reconstruction_roi_row1,
+                                   SystemParams::instance().hv_program_params_.hv_reconstruction_roi_col1,
+                                   SystemParams::instance().hv_program_params_.hv_reconstruction_roi_row2,
+                                   SystemParams::instance().hv_program_params_.hv_reconstruction_roi_col2);
+                    this->extractLaser(ho_image_part, &ho_laser_image, SystemParams::instance().hv_program_params_.hv_reconstruction_min_threshold);
+
+                    // Putting the cropped ROI area back into the original image
+                    this->resizeImage(ho_laser_image, hv_width, hv_height, &ho_final_image,
+                                      SystemParams::instance().hv_program_params_.hv_reconstruction_roi_row1,
+                                      SystemParams::instance().hv_program_params_.hv_reconstruction_roi_col1);
+                    MeasureProfileSheetOfLight(ho_final_image, hv_sheet_of_light_model_id, HTuple());
                 }
 
                 bil_file.close();
@@ -217,7 +252,7 @@ void ReconstructionTask::reconstruction()
                 {
                     std::string processed_time = this->getTime();
                     std::filesystem::path file_path = SystemParams::instance().valid_files_[file_idx];
-                    HTuple save_path = SystemParams::instance().hv_program_params_.hv_output_cloud_root + "/" + file_path.stem().string().c_str() + "_" + processed_time.c_str();
+                    HTuple save_path = SystemParams::instance().hv_program_params_.hv_reconstruction_output_clouds_dir + "/" + file_path.stem().string().c_str() + "_" + processed_time.c_str();
                     WriteObjectModel3d(hv_object_model_affine_trans, "obj", save_path, HTuple(), HTuple());
 
                     std::string msg = "Save to " + std::string(save_path[0].S().Text());

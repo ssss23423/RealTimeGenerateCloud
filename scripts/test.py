@@ -47,7 +47,7 @@ if __name__ == "__main__":
             image_saver = ImageSaver(
                 "/data/project/GenerateCloud/data/imgs/corrected/"
                 + os.path.basename(filename).split(".")[0]
-                + ".avi",
+                + ".bil.zst",
                 config["global"]["imageWidth"],
                 config["global"]["imageHeight"],
                 config["global"]["fps"],
