@@ -11,12 +11,16 @@ class ImageSaver:
         self.fps = fps
         self.is_color = is_color
 
-        self.writer = None
         self.saved_as_video = False
         self.saved_as_zstd = False
+        self.saved_as_bil = False
 
-        self.zstd_compressor = None
+        self.writer = None
+
         self.zstd_writer = None
+        self.zstd_compressor = None
+
+        self.bil_writer = None
 
         self._create_writer()
 
@@ -31,6 +35,7 @@ class ImageSaver:
                 isColor=self.is_color,
             )
             self.saved_as_video = True
+
         elif self.save_path.endswith(".avi"):
             fourcc = cv2.VideoWriter_fourcc(*"XVID")
             self.writer = cv2.VideoWriter(
@@ -41,30 +46,48 @@ class ImageSaver:
                 isColor=self.is_color,
             )
             self.saved_as_video = True
+
         elif self.save_path.endswith(".png"):
             pass
+
         elif self.save_path.endswith(".bil.zst"):
             self.zstd_compressor = zstd.ZstdCompressor(level=3)
             self.zstd_writer = open(self.save_path, "wb")
             self.saved_as_zstd = True
+
+        elif self.save_path.endswith(".bil"):
+            self.bil_writer = open(self.save_path, "wb")
+            self.save_as_bil = True
+
         else:
             raise ValueError(f"Invalid ext: {self.save_path}")
 
     def write(self, img):
         if self.saved_as_video:
             self.writer.write(img)
+
         elif self.saved_as_zstd:
             if len(img.shape) == 3:
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             raw = img.astype(np.uint8).tobytes()
             compressed = self.zstd_compressor.compress(raw)
             self.zstd_writer.write(compressed)
+
+        elif self.save_as_bil:
+            if len(img.shape) == 3:
+                img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            raw = img.astype(np.uint8).tobytes()
+            self.bil_writer.write(raw)
+
         else:
-            # Save as PNG
             cv2.imwrite(self.save_path, img)
 
     def close(self):
         if self.saved_as_video:
             self.writer.release()
+
         if self.saved_as_zstd:
             self.zstd_writer.close()
+
+        if hasattr(self, "bil_writer") and self.bil_writer:
+            self.bil_writer.close()
