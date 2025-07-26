@@ -1,11 +1,13 @@
 import pandas as pd
 from datetime import datetime
 
+from utils.log import logger
+
 
 class LogTimeMapper:
 
     def __init__(self, log_path, fps=120):
-        print(f"[Log Time Mapper] loading...")
+        logger.info(f"[Log Time Mapper] loading...")
         self.fps = fps
         self.df = pd.read_csv(log_path)
         self.df = self.df.sort_values("grab_image").reset_index(drop=True)
@@ -21,7 +23,6 @@ class LogTimeMapper:
         hours = log_time_str.str.slice(7, 9).astype(int)
         minutes = log_time_str.str.slice(9, 11).astype(int)
         seconds = log_time_str.str.slice(11, 13).astype(int)
-        # millis = log_time_str.str.slice(14).astype(int)
 
         datetimes = pd.to_datetime(
             {
@@ -35,11 +36,10 @@ class LogTimeMapper:
             errors="coerce",
         )
 
-        # timestamps = datetimes.astype("int64") / 1e9 + millis / 1000.0
         timestamps = datetimes.astype("int64") / 1e9
         return timestamps.to_numpy()
 
-    def get_estimated_timestamp(self, image_idx):
+    def get_estimated_timestamp(self, image_idx, return_bounds=False):
         df = self.df
         idx_start = df.iloc[0]["grab_image"]
         idx_end = df.iloc[-1]["grab_image"]
@@ -48,10 +48,16 @@ class LogTimeMapper:
 
         if image_idx < idx_start:
             delta_frames = idx_start - image_idx
-            return t_start - delta_frames / self.fps
+            est_time = t_start - delta_frames / self.fps
+            if return_bounds:
+                return est_time, (idx_start, t_start), (idx_start, t_start)
+            return est_time
         elif image_idx > idx_end:
             delta_frames = image_idx - idx_end
-            return t_end + delta_frames / self.fps
+            est_time = t_end + delta_frames / self.fps
+            if return_bounds:
+                return est_time, (idx_end, t_end), (idx_end, t_end)
+            return est_time
         else:
             for i in range(len(df) - 1):
                 g0 = df.loc[i, "grab_image"]
@@ -60,6 +66,11 @@ class LogTimeMapper:
                     t0 = df.loc[i, "timestamp"]
                     t1 = df.loc[i + 1, "timestamp"]
                     alpha = (image_idx - g0) / (g1 - g0)
-                    return t0 + alpha * (t1 - t0)
+                    est_time = t0 + alpha * (t1 - t0)
+                    if return_bounds:
+                        return est_time, (g0, t0), (g1, t1)
+                    return est_time
 
+            if return_bounds:
+                return t_end, (idx_end, t_end), (idx_end, t_end)
             return t_end

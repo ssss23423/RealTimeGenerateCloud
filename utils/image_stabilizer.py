@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
 
+from utils.log import logger
+
 
 class ImageStabilizer:
 
@@ -20,7 +22,7 @@ class ImageStabilizer:
         :param sy: m/pixel
         :param focus: m
         """
-        print(f"[Image Stabilizer] loading...")
+        logger.info(f"[Image Stabilizer] loading...")
         self.cx = cx
         self.cy = cy
         self.sx = sx

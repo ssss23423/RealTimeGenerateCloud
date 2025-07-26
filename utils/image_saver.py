@@ -1,3 +1,4 @@
+import os
 import cv2
 import zstandard as zstd
 import numpy as np
@@ -14,6 +15,7 @@ class ImageSaver:
         self.saved_as_video = False
         self.saved_as_zstd = False
         self.saved_as_bil = False
+        self.saved_as_png = False
 
         self.writer = None
 
@@ -47,9 +49,6 @@ class ImageSaver:
             )
             self.saved_as_video = True
 
-        elif self.save_path.endswith(".png"):
-            pass
-
         elif self.save_path.endswith(".bil.zst"):
             self.zstd_compressor = zstd.ZstdCompressor(level=3)
             self.zstd_writer = open(self.save_path, "wb")
@@ -57,12 +56,15 @@ class ImageSaver:
 
         elif self.save_path.endswith(".bil"):
             self.bil_writer = open(self.save_path, "wb")
-            self.save_as_bil = True
+            self.saved_as_bil = True
+
+        elif os.path.isdir(self.save_path):
+            self.saved_as_png = True
 
         else:
             raise ValueError(f"Invalid ext: {self.save_path}")
 
-    def write(self, img):
+    def write(self, img, save_path=None):
         if self.saved_as_video:
             self.writer.write(img)
 
@@ -73,14 +75,19 @@ class ImageSaver:
             compressed = self.zstd_compressor.compress(raw)
             self.zstd_writer.write(compressed)
 
-        elif self.save_as_bil:
+        elif self.saved_as_bil:
             if len(img.shape) == 3:
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
             raw = img.astype(np.uint8).tobytes()
             self.bil_writer.write(raw)
 
+        elif self.saved_as_png:
+            if save_path is None:
+                raise ValueError("Invalid save path")
+            cv2.imwrite(save_path, img)
+
         else:
-            cv2.imwrite(self.save_path, img)
+            raise ValueError("Save failed")
 
     def close(self):
         if self.saved_as_video:

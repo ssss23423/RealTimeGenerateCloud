@@ -13,7 +13,7 @@
         "focus": 0.0111401
     },
     "reconstruction": {
-        "imageData": "/data/project/GenerateCloud/data/imgs/corrected/2025-04-20_10-21-07.bil",
+        "imageData": "/data/project/GenerateCloud/data/imgs/bil_zst",
         "parsedInsData": "/data/project/GenerateCloud/data/ins/parsed/parsed_check_fix_ins.xlsx",
         "parsedLogData": "/data/project/GenerateCloud/data/logs/parsed/output.csv",
         "poses": "/data/project/GenerateCloud/data/saved_poses",

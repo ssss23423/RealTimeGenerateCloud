@@ -1,12 +1,12 @@
 import pandas as pd
 import numpy as np
-from datetime import datetime
-import warnings
+
+from utils.log import logger
 
 
 class InsReader:
     def __init__(self, path):
-        print(f"[Ins Reader] loading...")
+        logger.info(f"[Ins Reader] loading...")
         self.df = self._load_data(path)
 
         self.timestamps = self._compose_timestamp_vectorized(self.df)
@@ -15,7 +15,9 @@ class InsReader:
         self.pitch = self.df["Pitch"].to_numpy()
         self.yaw = self.df["Heading"].to_numpy()
 
-        print(f"INS 时间范围: {self.timestamps[0]:.3f}s ~ {self.timestamps[-1]:.3f}s")
+        logger.info(
+            f"The range of INS time: {self.timestamps[0]:.3f}s ~ {self.timestamps[-1]:.3f}s"
+        )
 
     def _load_data(self, path):
         if path.endswith(".xlsx"):
@@ -52,21 +54,28 @@ class InsReader:
         timestamps = datetimes.astype("int64") / 1e9 + ms_values / 1000.0
         return timestamps.to_numpy()
 
-    def get_interpolated_pose(self, target_time):
+    def get_interpolated_pose(self, target_time, return_bounds=False):
         if target_time <= self.timestamps[0]:
-            warnings.warn("Target time before INS range, using first record.")
-            return {
+            logger.warning("Target time before INS range, using first record.")
+            pose = {
                 "roll": self.roll[0],
                 "pitch": self.pitch[0],
                 "yaw": self.yaw[0],
             }
+            if return_bounds:
+                return pose, (self.timestamps[0], pose), (self.timestamps[0], pose)
+            return pose
+
         elif target_time >= self.timestamps[-1]:
-            warnings.warn("Target time beyond INS range, using first record.")
-            return {
+            logger.warning("Target time before INS range, using last record.")
+            pose = {
                 "roll": self.roll[-1],
                 "pitch": self.pitch[-1],
                 "yaw": self.yaw[-1],
             }
+            if return_bounds:
+                return pose, (self.timestamps[-1], pose), (self.timestamps[-1], pose)
+            return pose
 
         idx = np.searchsorted(self.timestamps, target_time)
         t0, t1 = self.timestamps[idx - 1], self.timestamps[idx]
@@ -75,8 +84,27 @@ class InsReader:
         def interp(a, b):
             return (1 - alpha) * a + alpha * b
 
-        return {
-            "roll": interp(self.roll[idx - 1], self.roll[idx]),
-            "pitch": interp(self.pitch[idx - 1], self.pitch[idx]),
-            "yaw": interp(self.yaw[idx - 1], self.yaw[idx]),
+        r0, r1 = self.roll[idx - 1], self.roll[idx]
+        p0, p1 = self.pitch[idx - 1], self.pitch[idx]
+        y0, y1 = self.yaw[idx - 1], self.yaw[idx]
+
+        interpolated = {
+            "roll": interp(r0, r1),
+            "pitch": interp(p0, p1),
+            "yaw": interp(y0, y1),
         }
+
+        if return_bounds:
+            lower = {
+                "roll": r0,
+                "pitch": p0,
+                "yaw": y0,
+            }
+            upper = {
+                "roll": r1,
+                "pitch": p1,
+                "yaw": y1,
+            }
+            return interpolated, (t0, lower), (t1, upper)
+
+        return interpolated

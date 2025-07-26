@@ -4,10 +4,12 @@ import numpy as np
 from natsort import natsorted
 import zstandard as zstd
 
+from utils.log import logger
+
 
 class BinaryReader:
     def __init__(self, path, img_width, img_height, file_ext):
-        print(f"[Binary Reader] loading...")
+        logger.info(f"[Binary Reader] loading...")
         self.path = path
         self.img_width = img_width
         self.img_height = img_height

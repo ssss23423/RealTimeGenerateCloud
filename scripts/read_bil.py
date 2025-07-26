@@ -170,7 +170,7 @@ class BilReader:
         with open(compressed_path, "rb") as compressed_file:
             with dctx.stream_reader(compressed_file) as reader:
                 while True:
-                    save_path = os.path.join(save_sub_dir, f"{self.frame_count}.png")
+                    save_path = os.path.join(save_sub_dir, f"{self.frame_count:06}.png")
                     chunk = reader.read(self.frame_size)
                     if len(chunk) < self.frame_size:
                         break
@@ -222,10 +222,10 @@ class BilReader:
 
 if __name__ == "__main__":
     reader = BilReader(
-        path="data/imgs/bil_zst/2025-04-20_12-41-08.bil.zst",
+        path="data/imgs/bil_zst/2025-04-20_10-21-07.bil.zst",
         file_ext=".bil.zst",
         output_ext=".png",
-        is_correct=True,
+        is_correct=False,
     )
     reader.convert("data/imgs/imgs")
     print("Finished!")

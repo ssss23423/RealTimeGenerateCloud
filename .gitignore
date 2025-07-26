@@ -7,3 +7,4 @@
 /generate_cloud_core/build
 /generate_cloud_core/bin
 __pycache__
+/logs
