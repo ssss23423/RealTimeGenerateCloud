@@ -6,7 +6,7 @@ project_root = os.path.dirname("/data/project/GenerateCloud/")
 sys.path.append(project_root)
 
 from utils.binary_reader import BinaryReader
-from utils.config_load import load_config_json
+from utils.config_loader import load_config_json
 from utils.image_saver import ImageSaver
 from utils.image_stabilizer import ImageStabilizer
 from utils.ins_reader import InsReader
@@ -46,9 +46,7 @@ if __name__ == "__main__":
         if filename is not None:
             logger.info(f"New file opened: {filename}")
             filename_no_ext = os.path.basename(filename).split(".")[0]
-            save_dir = os.path.join(
-                "/data/project/GenerateCloud/data/imgs/corrected/", f"{filename_no_ext}"
-            )
+            save_dir = os.path.join("/data/project/GenerateCloud/data/imgs/corrected/", f"{filename_no_ext}")
             if os.path.exists(save_dir) is False:
                 os.makedirs(save_dir)
             image_saver = ImageSaver(
@@ -58,11 +56,11 @@ if __name__ == "__main__":
                 config["global"]["fps"],
             )
 
-        est_time, (idx_lower, timestamp_lower), (idx_upper, timestamp_upper) = (
-            log_time_mapper.get_estimated_timestamp(frame_idx, True)
+        est_time, (idx_lower, timestamp_lower), (idx_upper, timestamp_upper) = log_time_mapper.get_estimated_timestamp(
+            frame_idx, True
         )
-        pose, (ins_time_lower, pose_lower), (ins_time_upper, pose_upper) = (
-            ins_reader.get_interpolated_pose(est_time, True)
+        pose, (ins_time_lower, pose_lower), (ins_time_upper, pose_upper) = ins_reader.get_interpolated_pose(
+            est_time, True
         )
         roll, pitch, yaw = pose["roll"], pose["pitch"], pose["yaw"]
         logger.info(

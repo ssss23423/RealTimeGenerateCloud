@@ -25,7 +25,7 @@ def setup_logger(log_file, log_level=logging.INFO, is_record=True, format_set=Tr
 
 
 log_dir = "/data/project/GenerateCloud/logs"
-local_time = time.strftime("%Y%m%d-%H%M%S")
+local_time = time.strftime("%Y%m%d_%H%M%S")
 if os.path.exists(log_dir) is False:
     os.makedirs(log_dir)
 logger = setup_logger(os.path.join(log_dir, local_time + ".log"))

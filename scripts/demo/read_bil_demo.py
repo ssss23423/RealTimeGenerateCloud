@@ -4,7 +4,7 @@ import numpy as np
 from natsort import natsorted
 import zstandard as zstd
 
-from image_stabilizer import ImageStabilizer
+from scripts.demo.image_stabilizer_demo import ImageStabilizer
 
 
 class BilReader:
