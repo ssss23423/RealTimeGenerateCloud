@@ -1,10 +1,9 @@
 #include "calibration_task.h"
 
 #include "Halcon.h"
+#include "app_controller.h"
 
-#include "logger.h"
-
-CalibrationTask::CalibrationTask(int id) : Task(id)
+CalibrationTask::CalibrationTask(std::string id) : Task(id)
 {
 }
 
@@ -21,27 +20,26 @@ void CalibrationTask::run()
     catch (const std::exception &e)
     {
         std::string msg = std::string("[Error in Calibration Task] ") + e.what();
-        Logger::instance().log(msg, LogLevel::Error);
+        AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
     }
     catch (HException &exception)
     {
         std::string msg = std::string("[Error in Calibration Task] ") + exception.ErrorMessage().Text();
-        Logger::instance().log(msg, LogLevel::Error);
+        AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
     }
 }
 
 void CalibrationTask::calibrate()
 {
-    // Set calibrate threshold
-    if (SystemParams::instance().getRunningMode() == RunMode::Ui)
-    {
-        cv::Mat cv_laser_img1 = cv::imread((SystemParams::instance().hv_program_params_.hv_laser1_path + ".png")[0].S().Text());
-        cv::Mat cv_laser_img2 = cv::imread((SystemParams::instance().hv_program_params_.hv_laser2_path + ".png")[0].S().Text());
+// Set calibrate threshold
+#ifdef _WIN32
+    cv::Mat cv_laser_img1 = cv::imread((SystemParams::instance().hv_program_params_.hv_laser1_path + ".png")[0].S().Text());
+    cv::Mat cv_laser_img2 = cv::imread((SystemParams::instance().hv_program_params_.hv_laser2_path + ".png")[0].S().Text());
 
-        const int threshold1 = this->setThreshold(cv_laser_img1);
-        const int threshold2 = this->setThreshold(cv_laser_img2);
-        SystemParams::instance().hv_program_params_.hv_calibration_min_threshold = threshold1 < threshold2 ? threshold1 : threshold2;
-    }
+    const int threshold1 = this->setThreshold(cv_laser_img1);
+    const int threshold2 = this->setThreshold(cv_laser_img2);
+    SystemParams::instance().hv_program_params_.hv_calibration_min_threshold = threshold1 < threshold2 ? threshold1 : threshold2;
+#endif
 
     // Part 1: Perform the calibration of the camera
     // Perform some initializations
@@ -83,7 +81,7 @@ void CalibrationTask::calibrate()
         {
             ReadImage(&ho_image, SystemParams::instance().hv_program_params_.hv_calibration_images_dir + hv_idx.TupleString(".2"));
             std::string msg = "Perform the calibration of the camera: " + std::to_string(hv_idx[0].I()) + "/" + std::to_string(SystemParams::instance().hv_program_params_.hv_calibration_image_count[0].I());
-            Logger::instance().log(msg);
+            AppController::instance().getLogger().log(msg);
             FindCalibObject(ho_image, hv_calib_data_id, 0, 0, hv_idx, HTuple(), HTuple());
             GetCalibDataObservPoints(hv_calib_data_id, 0, 0, hv_idx, &hv_row, &hv_col, &hv_idx_d, &hv_pose);
         }
@@ -92,15 +90,15 @@ void CalibrationTask::calibrate()
             error_images_num++;
             std::string msg1 = "Error " + std::to_string(exception.ErrorCode()) + " in " + exception.ProcName().Text() + ": " + exception.ErrorMessage().Text();
             std::string msg2 = std::string("Skip ") + (SystemParams::instance().hv_program_params_.hv_calibration_images_dir + hv_idx.TupleString(".2")).S().Text();
-            Logger::instance().log(msg1, LogLevel::Error);
-            Logger::instance().log(msg2, LogLevel::Warn);
+            AppController::instance().getLogger().log(msg1, Logger::LogLevel::Error);
+            AppController::instance().getLogger().log(msg2, Logger::LogLevel::Warn);
         }
     }
 
     CalibrateCameras(hv_calib_data_id, &hv_camera_calibration_error);
-    Logger::instance().log("The camera calibration has been performed successfully!");
-    Logger::instance().log("Number of error images: " + std::to_string(error_images_num));
-    Logger::instance().log("Calibration error: " + std::to_string(hv_camera_calibration_error[0].D()));
+    AppController::instance().getLogger().log("The camera calibration has been performed successfully!");
+    AppController::instance().getLogger().log("Number of error images: " + std::to_string(error_images_num));
+    AppController::instance().getLogger().log("Calibration error: " + std::to_string(hv_camera_calibration_error[0].D()));
 
     // Part 2: Calibrate the orientation of the light plane with respect to the world coordinate system
     // Definition of the world coordinate system (WCS):
@@ -185,8 +183,8 @@ void CalibrationTask::calibrate()
         throw std::runtime_error(msg);
     }
 
-    Logger::instance().log("The light plane calibration has been performed successfully!");
-    Logger::instance().log("Calibration error: " + std::to_string(hv_mean_residual[0].D()));
+    AppController::instance().getLogger().log("The light plane calibration has been performed successfully!");
+    AppController::instance().getLogger().log("Calibration error: " + std::to_string(hv_mean_residual[0].D()));
 
     // Part 3: Calibration of the movement of the object between the acquisition of two successive profiles
 
@@ -231,7 +229,7 @@ void CalibrationTask::calibrate()
     AffineTransPoint3d(hv_hom_mat_3d_pos2_to_world, 0, 0, 0, &hv_end_x, &hv_end_y, &hv_end_z);
     CreatePose(hv_end_x - hv_start_x, hv_end_y - hv_start_y, hv_end_z - hv_start_z, 0, 0, 0, "Rp+T", "gba", "point", &hv_movement_pose_nsteps);
     SystemParams::instance().hv_system_poses_.hv_movement_poses = hv_movement_pose_nsteps / SystemParams::instance().hv_program_params_.hv_calibration_step_count;
-    Logger::instance().log("The light movement pose has been performed successfully!");
+    AppController::instance().getLogger().log("The light movement pose has been performed successfully!");
 }
 
 void CalibrationTask::calibrateCamera(HTuple &hv_calibration_data_id)
@@ -270,7 +268,7 @@ void CalibrationTask::calibrateCamera(HTuple &hv_calibration_data_id)
         {
             ReadImage(&ho_image, SystemParams::instance().hv_program_params_.hv_calibration_images_dir + "/caltab" + hv_idx.TupleString(".2"));
             std::string msg = "Perform the calibration of the camera: " + std::to_string(hv_idx[0].I()) + "/" + std::to_string(SystemParams::instance().hv_program_params_.hv_calibration_image_count[0].I());
-            Logger::instance().log(msg);
+            AppController::instance().getLogger().log(msg);
             FindCalibObject(ho_image, hv_calibration_data_id, 0, 0, hv_idx, HTuple(), HTuple());
             GetCalibDataObservPoints(hv_calibration_data_id, 0, 0, hv_idx, &hv_row, &hv_col, &hv_idx_d, &hv_pose);
         }
@@ -279,34 +277,34 @@ void CalibrationTask::calibrateCamera(HTuple &hv_calibration_data_id)
             error_images_num++;
             std::string msg1 = "Error " + std::to_string(exception.ErrorCode()) + " in " + exception.ProcName().Text() + ": " + exception.ErrorMessage().Text();
             std::string msg2 = std::string("Skip ") + (SystemParams::instance().hv_program_params_.hv_calibration_images_dir + hv_idx.TupleString(".2")).S().Text();
-            Logger::instance().log(msg1, LogLevel::Error);
-            Logger::instance().log(msg2, LogLevel::Warn);
+
+            AppController::instance().getLogger().log(msg1, Logger::LogLevel::Error);
+            AppController::instance().getLogger().log(msg2, Logger::LogLevel::Warn);
         }
     }
 
     CalibrateCameras(hv_calibration_data_id, &hv_camera_calibration_error);
-    Logger::instance().log("The camera calibration has been performed successfully!");
-    Logger::instance().log("Number of error images: " + std::to_string(error_images_num));
-    Logger::instance().log("Calibration error: " + std::to_string(hv_camera_calibration_error[0].D()));
+    AppController::instance().getLogger().log("The camera calibration has been performed successfully!");
+    AppController::instance().getLogger().log("Number of error images: " + std::to_string(error_images_num));
+    AppController::instance().getLogger().log("Calibration error: " + std::to_string(hv_camera_calibration_error[0].D()));
 }
 
 void CalibrationTask::calibrateLightPlane(HTuple &hv_calibration_data_id)
 {
-    if (SystemParams::instance().getRunningMode() == RunMode::Ui)
+#ifdef _WIN32
+    cv::Mat cv_laser_img1 = cv::imread((SystemParams::instance().hv_program_params_.hv_laser1_path + ".png")[0].S().Text());
+    cv::Mat cv_laser_img2 = cv::imread((SystemParams::instance().hv_program_params_.hv_laser2_path + ".png")[0].S().Text());
+
+    if (cv_laser_img1.empty() || cv_laser_img2.empty())
     {
-        cv::Mat cv_laser_img1 = cv::imread((SystemParams::instance().hv_program_params_.hv_laser1_path + ".png")[0].S().Text());
-        cv::Mat cv_laser_img2 = cv::imread((SystemParams::instance().hv_program_params_.hv_laser2_path + ".png")[0].S().Text());
-
-        if (cv_laser_img1.empty() || cv_laser_img2.empty())
-        {
-            std::string msg = "Error reading laser images";
-            throw std::runtime_error(msg);
-        }
-
-        const int threshold1 = this->setThreshold(cv_laser_img1);
-        const int threshold2 = this->setThreshold(cv_laser_img2);
-        SystemParams::instance().hv_program_params_.hv_calibration_min_threshold = threshold1 < threshold2 ? threshold1 : threshold2;
+        std::string msg = "Error reading laser images";
+        throw std::runtime_error(msg);
     }
+
+    const int threshold1 = this->setThreshold(cv_laser_img1);
+    const int threshold2 = this->setThreshold(cv_laser_img2);
+    SystemParams::instance().hv_program_params_.hv_calibration_min_threshold = threshold1 < threshold2 ? threshold1 : threshold2;
+#endif
 
     // Definition of the world coordinate system (WCS)
     HObject ho_caltab_image1, ho_caltab_image2;
@@ -382,8 +380,8 @@ void CalibrationTask::calibrateLightPlane(HTuple &hv_calibration_data_id)
         throw std::runtime_error(msg);
     }
 
-    Logger::instance().log("The light plane calibration has been performed successfully!");
-    Logger::instance().log("Calibration error: " + std::to_string(hv_mean_residual[0].D()));
+    AppController::instance().getLogger().log("The light plane calibration has been performed successfully!");
+    AppController::instance().getLogger().log("Calibration error: " + std::to_string(hv_mean_residual[0].D()));
 }
 
 void CalibrationTask::calibrateMovement(HTuple &hv_calibration_data_id)
@@ -429,7 +427,7 @@ void CalibrationTask::calibrateMovement(HTuple &hv_calibration_data_id)
     AffineTransPoint3d(hv_hom_mat_3d_pos2_to_world, 0, 0, 0, &hv_end_x, &hv_end_y, &hv_end_z);
     CreatePose(hv_end_x - hv_start_x, hv_end_y - hv_start_y, hv_end_z - hv_start_z, 0, 0, 0, "Rp+T", "gba", "point", &hv_movement_pose_nsteps);
     SystemParams::instance().hv_system_poses_.hv_movement_poses = hv_movement_pose_nsteps / SystemParams::instance().hv_program_params_.hv_calibration_step_count;
-    Logger::instance().log("The light movement pose has been performed successfully!");
+    AppController::instance().getLogger().log("The light movement pose has been performed successfully!");
 }
 
 void CalibrationTask::saveToFile()
@@ -449,7 +447,7 @@ void CalibrationTask::saveToFile()
         WritePose(SystemParams::instance().hv_system_poses_.hv_movement_poses, hv_saved_poses_dir + "/movement_pose.dat");
 
         SystemParams::instance().calibration_flag_ = false;
-        Logger::instance().log("The calibration parameters has been saved successfully!");
+        AppController::instance().getLogger().log("The calibration parameters has been saved successfully!");
     }
 }
 

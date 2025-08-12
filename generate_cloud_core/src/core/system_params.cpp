@@ -1,14 +1,14 @@
 #include "system_params.h"
 
-#include "logger.h"
+#include "app_controller.h"
 
-SystemParams::SystemParams(const std::string &config_path, const RunMode &mode)
+SystemParams::SystemParams(const std::string &config_path, const Mode &mode)
 {
-    run_mode_ = mode;
+    mode_ = mode;
     reload(config_path);
 }
 
-void SystemParams::init(const std::string &config_path, const RunMode &mode)
+void SystemParams::init(const std::string &config_path, const Mode &mode)
 {
     std::call_once(init_flag_, [&]()
                    { instance_ = std::unique_ptr<SystemParams>(new SystemParams(config_path, mode)); });
@@ -30,9 +30,9 @@ void SystemParams::reload(const std::string &new_config_path)
     internalInitialize();
 }
 
-RunMode SystemParams::getRunningMode()
+Mode SystemParams::getMode()
 {
-    return run_mode_;
+    return mode_;
 }
 
 void SystemParams::internalInitialize()
@@ -42,17 +42,23 @@ void SystemParams::internalInitialize()
         loadConfigFile();
         validatePaths(Path::All);
         loadPosesFiles();
-        Logger::instance().log("[SystemParams] Load successfully!");
+        AppController::instance().getLogger().log("[SystemParams] Load successfully!");
     }
     catch (const std::exception &e)
     {
         std::string msg = "[SystemParams] Reload failed: " + std::string(e.what());
-        Logger::instance().log(msg, LogLevel::Error);
+        AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
+#ifndef _WIN32
+        throw std::runtime_error(msg);
+#endif
     }
     catch (const HException &e)
     {
         std::string msg = "[SystemParams] Reload failed: " + std::string(e.ErrorMessage());
-        Logger::instance().log(msg, LogLevel::Error);
+        AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
+#ifndef _WIN32
+        throw std::runtime_error(msg);
+#endif
     }
 }
 

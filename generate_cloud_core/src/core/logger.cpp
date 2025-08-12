@@ -1,60 +1,15 @@
 #include "logger.h"
-
-Logger &Logger::instance()
-{
-    static Logger instance;
-    return instance;
-}
+#include "app_controller.h"
 
 void Logger::log(const std::string &message, LogLevel level)
 {
     std::string level_str;
-    if (mode_ == LogMode::Ui)
-    {
-        switch (level)
-        {
-        case LogLevel::Info:
-            level_str = "[INFO] ";
-            break;
-        case LogLevel::Warn:
-            level_str = "[WARN] ";
-            break;
-        case LogLevel::Error:
-            level_str = "[ERROR] ";
-            break;
-        }
-    }
-    else
-    {
-        switch (level)
-        {
-        case LogLevel::Info:
-            level_str = NONE_COLOR "[INFO] ";
-            break;
-        case LogLevel::Warn:
-            level_str = YELLOW "[WARN] ";
-            break;
-        case LogLevel::Error:
-            level_str = RED "[ERROR] ";
-            break;
-        }
-    }
 
-    std::string full_message = level_str + message;
-    std::cout << full_message << std::endl;
+    static const std::array<const char *, 3> ui_prefix = {"[INFO] ", "[WARN] ", "[ERROR] "};
+    static const std::array<const char *, 3> term_prefix = {NONE_COLOR "[INFO] ", YELLOW "[WARN] ", RED "[ERROR] "};
 
-    for (auto &cb : callbacks_)
-    {
-        cb({level, full_message});
-    }
-}
+    const auto &prefix = (mode_ == Mode::Ui) ? ui_prefix : term_prefix;
+    std::string full_message = prefix[static_cast<size_t>(level)] + message;
 
-void Logger::registerCallback(LogCallback cb)
-{
-    callbacks_.push_back(cb);
-}
-
-void Logger::setMode(LogMode mode)
-{
-    mode_ = mode;
+    AppController::instance().publish("log", LogMessage{level, full_message});
 }

@@ -65,19 +65,19 @@ enum class Path
     All
 };
 
-enum class RunMode
+enum class Mode
 {
     Ui,
-    Cli
+    Term
 };
 
 class SystemParams
 {
 public:
-    static void init(const std::string &config_path, const RunMode &mode);
+    static void init(const std::string &config_path, const Mode &mode);
     static SystemParams &instance();
     void reload(const std::string &new_config_path);
-    RunMode getRunningMode();
+    Mode getMode();
 
     hvProgramParams hv_program_params_;
     hvSystemPoses hv_system_poses_;
@@ -100,7 +100,7 @@ public:
     std::vector<int> frame_count_;
 
 private:
-    explicit SystemParams(const std::string &config_path, const RunMode &mode);
+    explicit SystemParams(const std::string &config_path, const Mode &mode);
     SystemParams(const SystemParams &) = delete;
     SystemParams &operator=(const SystemParams &) = delete;
 
@@ -111,7 +111,7 @@ private:
 
     json config_;
     std::mutex mtx_;
-    RunMode run_mode_ = RunMode::Cli;
+    Mode mode_;
     static inline std::unique_ptr<SystemParams> instance_ = nullptr;
     static inline std::once_flag init_flag_;
 };

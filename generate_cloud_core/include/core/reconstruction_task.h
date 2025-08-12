@@ -8,7 +8,7 @@
 class ReconstructionTask : public Task
 {
 public:
-    ReconstructionTask(int id);
+    ReconstructionTask(std::string id);
 
 private:
     void run() override;

@@ -3,9 +3,9 @@
 #include <filesystem>
 #include <iostream>
 
-#include "logger.h"
+#include "app_controller.h"
 
-ReconstructionTask::ReconstructionTask(int id) : Task(id)
+ReconstructionTask::ReconstructionTask(std::string id) : Task(id)
 {
 }
 
@@ -15,7 +15,7 @@ void ReconstructionTask::run()
     {
         if (SystemParams::instance().calibration_flag_)
         {
-            Logger::instance().log("Please calibrate first!", LogLevel::Warn);
+            AppController::instance().getLogger().log("Please calibrate first!", Logger::LogLevel::Warn);
             return;
         }
 
@@ -23,7 +23,7 @@ void ReconstructionTask::run()
 
         if (SystemParams::instance().valid_files_.empty())
         {
-            Logger::instance().log("No valid .bil files found.", LogLevel::Error);
+            AppController::instance().getLogger().log("No valid .bil files found.", Logger::LogLevel::Error);
             return;
         }
 
@@ -33,7 +33,7 @@ void ReconstructionTask::run()
     catch (const std::exception &e)
     {
         std::string msg = std::string("[Error in Reconstruction Task] ") + e.what();
-        Logger::instance().log(msg, LogLevel::Error);
+        AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
     }
 }
 
@@ -49,7 +49,7 @@ void ReconstructionTask::findDatafiles()
 
     try
     {
-        Logger::instance().log("Start to find .bil files");
+        AppController::instance().getLogger().log("Start to find .bil files");
         SystemParams::instance().valid_files_.clear();
         SystemParams::instance().frame_count_.clear();
 
@@ -57,7 +57,7 @@ void ReconstructionTask::findDatafiles()
         fs::path input_path(data_input);
         if (!fs::exists(input_path))
         {
-            Logger::instance().log("Path does not exist: " + data_input, LogLevel::Error);
+            AppController::instance().getLogger().log("Path does not exist: " + data_input, Logger::LogLevel::Error);
             return;
         }
 
@@ -90,7 +90,7 @@ void ReconstructionTask::findDatafiles()
         }
         else
         {
-            Logger::instance().log("Unsupported path type: " + data_input, LogLevel::Error);
+            AppController::instance().getLogger().log("Unsupported path type: " + data_input, Logger::LogLevel::Error);
             return;
         }
 
@@ -106,7 +106,7 @@ void ReconstructionTask::findDatafiles()
 
             if (file_size % img_size != 0)
             {
-                Logger::instance().log("File " + normalized_path + " size is not divisible by image size.", LogLevel::Warn);
+                AppController::instance().getLogger().log("File " + normalized_path + " size is not divisible by image size.", Logger::LogLevel::Warn);
             }
             frame_count = static_cast<int>(file_size / img_size);
 
@@ -121,19 +121,19 @@ void ReconstructionTask::findDatafiles()
             std::string msg = "[DATA FILE] " + path.filename().string() +
                               " | Size: " + std::to_string(file_size) +
                               " bytes | Frames: " + (frame_count >= 0 ? std::to_string(frame_count) : "Unknown");
-            Logger::instance().log(msg);
+            AppController::instance().getLogger().log(msg);
         }
 
         SystemParams::instance().total_valid_files_ = file_count;
-        Logger::instance().log("[BIL FILE] Total .bil files: " + std::to_string(file_count));
-        Logger::instance().log("[BIL FILE] Total size (bytes): " + std::to_string(total_size));
-        Logger::instance().log("[BIL FILE] Total frames: " + std::to_string(total_frame_count));
+        AppController::instance().getLogger().log("[BIL FILE] Total .bil files: " + std::to_string(file_count));
+        AppController::instance().getLogger().log("[BIL FILE] Total size (bytes): " + std::to_string(total_size));
+        AppController::instance().getLogger().log("[BIL FILE] Total frames: " + std::to_string(total_frame_count));
     }
     catch (const std::exception &e)
     {
         std::string msg = std::string("Error in findDatafiles: ") + e.what();
         throw std::runtime_error(msg);
-        Logger::instance().log(msg, LogLevel::Error);
+        AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
     }
 }
 
@@ -174,7 +174,7 @@ void ReconstructionTask::reconstruction()
                 if (!bil_file.is_open())
                 {
                     std::string msg = "Can't open " + SystemParams::instance().valid_files_[file_idx];
-                    Logger::instance().log(msg, LogLevel::Error);
+                    AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
                     continue;
                 }
                 bil_file.seekg(0, std::ios::beg);
@@ -201,7 +201,7 @@ void ReconstructionTask::reconstruction()
                 for (size_t frame = 0; frame < SystemParams::instance().frame_count_[file_idx]; frame++)
                 {
                     std::string msg = "Processing: " + std::to_string(frame + 1) + "/" + std::to_string(SystemParams::instance().frame_count_[file_idx]) + " frames";
-                    Logger::instance().log(msg);
+                    AppController::instance().getLogger().log(msg);
                     if (!running_.load())
                     {
                         break;
@@ -213,7 +213,7 @@ void ReconstructionTask::reconstruction()
                     if (bil_file.gcount() < img_size)
                     {
                         std::string msg = "Error reading frame " + std::to_string(frame) + " from " + SystemParams::instance().valid_files_[file_idx];
-                        Logger::instance().log(msg, LogLevel::Warn);
+                        AppController::instance().getLogger().log(msg, Logger::LogLevel::Warn);
                         break;
                     }
                     cv::Mat temp_img(img_height, img_width, CV_8UC1, img_data.data());
@@ -256,7 +256,7 @@ void ReconstructionTask::reconstruction()
                     WriteObjectModel3d(hv_object_model_affine_trans, "obj", save_path, HTuple(), HTuple());
 
                     std::string msg = "Save to " + std::string(save_path[0].S().Text());
-                    Logger::instance().log(msg);
+                    AppController::instance().getLogger().log(msg);
                 }
 
                 if (!running_.load())
@@ -267,19 +267,19 @@ void ReconstructionTask::reconstruction()
             catch (const HException &exception)
             {
                 std::string msg = "Error in " + SystemParams::instance().valid_files_[file_idx] + " file: " + exception.ErrorMessage().Text();
-                Logger::instance().log(msg, LogLevel::Error);
+                AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
             }
             catch (const std::exception &e)
             {
                 std::string msg = "Error in " + SystemParams::instance().valid_files_[file_idx] + " file: " + e.what();
-                Logger::instance().log(msg, LogLevel::Error);
+                AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
             }
         }
     }
     catch (const std::exception &e)
     {
         std::string msg = std::string("Error in reconstruction: ") + e.what();
-        Logger::instance().log(msg, LogLevel::Error);
+        AppController::instance().getLogger().log(msg, Logger::LogLevel::Error);
     }
 }
 
@@ -394,7 +394,7 @@ std::string ReconstructionTask::getTime()
     localtime_s(&struct_time, &local_time);
     string_time << std::put_time(&struct_time, "%Y%m%d%H%M%S");
     return string_time.str();
-#elif __linux__
+#else
     std::time_t result = std::time(nullptr);
     struct std::tm *struct_tm = std::localtime(&result);
     std::string time_stamp;
@@ -432,7 +432,7 @@ void ReconstructionTask::preprocess()
     }
     first_frame.copyTo(src_mat_);
 
-    if (SystemParams::instance().set_roi_flag_ && !SystemParams::instance().select_entire_frame_ && SystemParams::instance().getRunningMode() == RunMode::Ui)
+    if (SystemParams::instance().set_roi_flag_ && !SystemParams::instance().select_entire_frame_)
     {
         setRoi(first_frame);
     }
@@ -444,7 +444,7 @@ void ReconstructionTask::preprocess()
         SystemParams::instance().hv_program_params_.hv_reconstruction_roi_col2 = SystemParams::instance().img_width_ - 1;
     }
 
-    if (SystemParams::instance().set_threshold_flag_ && SystemParams::instance().getRunningMode() == RunMode::Ui)
+    if (SystemParams::instance().set_threshold_flag_)
     {
         setThreshold(first_frame);
     }
@@ -453,26 +453,26 @@ void ReconstructionTask::preprocess()
 void ReconstructionTask::setRoi(const cv::Mat &src_mat)
 {
 
-    Logger::instance().log("Please select the ROI region");
+    AppController::instance().getLogger().log("Please select the ROI region");
     double max_size = 700;
     int window_width, window_height;
     double aspect_ratio = static_cast<double>(src_mat.cols) / static_cast<double>(src_mat.rows);
 
     if (src_mat.cols > src_mat.rows)
     {
-#ifndef _WIN32
-        window_width = std::min(src_mat.cols, static_cast<int>(max_size));
-#else
+#ifdef _WIN32
         window_width = min(src_mat.cols, static_cast<int>(max_size));
+#else
+        window_width = std::min(src_mat.cols, static_cast<int>(max_size));
 #endif
         window_height = static_cast<int>(window_width / aspect_ratio);
     }
     else
     {
-#ifndef _WIN32
-        window_height = std::min(src_mat.rows, static_cast<int>(max_size));
-#else
+#ifdef _WIN32
         window_height = min(src_mat.rows, static_cast<int>(max_size));
+#else
+        window_height = std::min(src_mat.rows, static_cast<int>(max_size));
 #endif
         window_width = static_cast<int>(window_height * aspect_ratio);
     }
@@ -531,7 +531,7 @@ void ReconstructionTask::setRoi(const cv::Mat &src_mat)
         }
         catch (const cv::Exception &e)
         {
-            Logger::instance().log("Window closed or unavailable. ROI set to default.");
+            AppController::instance().getLogger().log("Window closed or unavailable. ROI set to default.");
             roi_selected = false;
             break;
         }
@@ -547,7 +547,7 @@ void ReconstructionTask::setRoi(const cv::Mat &src_mat)
         if (key == 27)
         {
             roi_selected = false;
-            Logger::instance().log("ESC pressed. ROI set to default.");
+            AppController::instance().getLogger().log("ESC pressed. ROI set to default.");
             break;
         }
     }
@@ -578,19 +578,19 @@ void ReconstructionTask::setThreshold(const cv::Mat &src_mat)
 
     if (src_mat.cols > src_mat.rows)
     {
-#ifndef WIN32
-        window_width = std::min(src_mat.cols, static_cast<int>(max_size));
-#else
+#ifdef _WIN32
         window_width = min(src_mat.cols, static_cast<int>(max_size));
+#else
+        window_width = std::min(src_mat.cols, static_cast<int>(max_size));
 #endif
         window_height = static_cast<int>(window_width / aspect_ratio);
     }
     else
     {
-#ifndef WIN32
-        window_height = std::min(src_mat.rows, static_cast<int>(max_size));
-#else
+#ifdef _WIN32
         window_height = min(src_mat.rows, static_cast<int>(max_size));
+#else
+        window_height = std::min(src_mat.rows, static_cast<int>(max_size));
 #endif
         window_width = static_cast<int>(window_height * aspect_ratio);
     }

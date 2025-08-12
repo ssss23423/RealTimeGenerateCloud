@@ -1,12 +1,13 @@
 #pragma once
 
 #include <atomic>
+#include <string>
 #include <thread>
 
 class Task
 {
 public:
-    explicit Task(int id) : id_(id), running_(false), finished_(false) {}
+    explicit Task(std::string id) : id_(id), running_(false), finished_(false) {}
     virtual ~Task()
     {
         if (task_thread_.joinable())
@@ -54,12 +55,12 @@ public:
 
     bool isRunning() const { return running_.load(); }
     bool isFinished() const { return finished_.load(); }
-    int getId() const { return id_; }
+    std::string getId() const { return id_; }
 
 protected:
     virtual void run() = 0;
 
-    int id_;
+    std::string id_;
     std::atomic<bool> running_;
     std::atomic<bool> finished_;
     std::thread task_thread_;

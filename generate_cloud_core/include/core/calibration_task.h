@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include <opencv2/opencv.hpp>
 
 #include "task.h"
@@ -8,7 +9,7 @@
 class CalibrationTask : public Task
 {
 public:
-    CalibrationTask(int id);
+    CalibrationTask(std::string id);
 
 private:
     void run() override;
