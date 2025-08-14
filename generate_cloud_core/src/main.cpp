@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     parser.add("ui", 'u', "Run in UI mode");
     parser.add("terminal", 't', "Run in CLI mode");
     parser.add<std::string>("config", 'c', "Config path", false, "/data/project/GenerateCloud/config.json");
-    // parser.add<int>("method", 'm', "Process mode. [1] System calibration; [2] Cloud reconstructing; [3] Cloud merging", true);
+    parser.add<int>("method", 'm', "Process mode. [1] System calibration; [2] Cloud reconstructing; [3] Cloud merging", true);
     parser.parse_check(argc, argv);
 
     if (parser.exist("ui"))
@@ -42,6 +42,5 @@ int main(int argc, char *argv[])
         runCliMode(parser);
     }
 
-    AppController::instance().stop();
     return 0;
 }

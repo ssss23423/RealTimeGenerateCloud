@@ -32,11 +32,13 @@ void AppController::start()
 
 void AppController::stop()
 {
+    task_manager_->stop();
     {
         std::unique_lock lock(publish_mutex);
         running_.store(false);
     }
     cv_.notify_all();
+
     if (core_process_.joinable())
     {
         core_process_.join();
@@ -68,9 +70,8 @@ void AppController::cancelSubscribe(const std::string &topic, std::shared_ptr<Su
 
 void AppController::signalHandler(int)
 {
-    running_.store(false);
     AppController::instance().publish("exit", false);
-    AppController::instance().cv_.notify_all();
+    AppController::instance().stop();
 }
 
 void AppController::coreProcess()

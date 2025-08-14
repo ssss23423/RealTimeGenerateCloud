@@ -55,7 +55,6 @@ TaskManager::TaskManager(Mode mode)
 
 void TaskManager::run()
 {
-    AppController::instance().registerSubscribe("task_command", shared_from_this());
     while (running_.load())
     {
         {
@@ -94,6 +93,7 @@ void TaskManager::run()
 
 void TaskManager::start()
 {
+    AppController::instance().registerSubscribe("task_command", shared_from_this());
     if (!running_.load())
     {
         running_.store(true);

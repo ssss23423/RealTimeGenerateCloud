@@ -8,8 +8,7 @@
 CliApp::CliApp(const cmdline::parser &parser)
 {
     json_config_path_ = parser.get<std::string>("config");
-    // method_ = static_cast<Method>(parser.get<int>("method"));
-    method_ = Method::Reconstructing;
+    method_ = static_cast<Method>(parser.get<int>("method") - 1);
 
     handle_map_["log"] = [this](const std::any &event)
     {
@@ -51,9 +50,9 @@ CliApp::CliApp(const cmdline::parser &parser)
 
     std::thread([this]
                 {
-        char ch;
-        std::cin >> ch;
-        handle_map_["exit"](false); })
+        char ch = std::cin.get();
+        if (ch == '\n')
+        {handle_map_["exit"](false);} })
         .detach();
 }
 
@@ -95,6 +94,6 @@ void CliApp::run()
     std::cout << static_cast<int>(method_) << std::endl;
     this->method_map_[method_]("start");
 
-    // AppController::instance().getLogger().log("Press ENTER to exit...");
     running_.wait(true);
+    AppController::instance().stop();
 }

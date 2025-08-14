@@ -19,6 +19,7 @@ endif()
 
 find_package(OpenGL REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(PCL REQUIRED COMPONENTS common io filters features registration visualization)
 
 list(APPEND CMAKE_MODULE_PATH "${HALCONEXAMPLES}/cmake")
 include(UseHALCON)
@@ -72,6 +73,11 @@ else()
     target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
 endif()
 
+target_include_directories(${PROJECT_NAME} PRIVATE ${PCL_INCLUDE_DIRS})
+
 target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL)
 target_link_libraries(${PROJECT_NAME} PRIVATE HALCON::CppInt)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PCL_LIBRARIES})
+
+add_definitions(${PCL_DEFINITIONS})
