@@ -11,5 +11,5 @@ void Logger::log(const std::string &message, LogLevel level)
     const auto &prefix = (mode_ == Mode::Ui) ? ui_prefix : term_prefix;
     std::string full_message = prefix[static_cast<size_t>(level)] + message;
 
-    AppController::instance().publish("log", LogMessage{level, full_message});
+    AppController::instance().publish("log", std::make_any<LogMessage>(level, full_message));
 }

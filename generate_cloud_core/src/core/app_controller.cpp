@@ -70,7 +70,7 @@ void AppController::cancelSubscribe(const std::string &topic, std::shared_ptr<Su
 
 void AppController::signalHandler(int)
 {
-    AppController::instance().publish("exit", false);
+    AppController::instance().publish("exit", std::make_any<bool>(false));
     AppController::instance().stop();
 }
 

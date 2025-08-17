@@ -3,6 +3,7 @@
 #include <mutex>
 #include <unordered_map>
 
+#include "params_event.h"
 #include "subscriber.h"
 #include "task.h"
 #include "system_params.h"
@@ -32,4 +33,14 @@ private:
     std::unordered_map<std::string, Task *> tasks_;
     std::unordered_map<std::string, std::unordered_map<std::string, std::function<void()>>> method_map_;
     std::unordered_map<std::string, std::function<void(const std::any &)>> handle_map_;
+    std::unordered_map<std::string, std::function<void(const ParamUpdateEvent &)>> params_update_map_;
+
+    void initMethodMap();
+    void initHandleMap();
+    void initParamsUpdateMap();
+
+    void taskCmdHandler(const std::pair<std::string, std::string> &msg);
+    void paramsInit(const std::pair<std::string, std::string> &event);
+    void paramsReload(const std::pair<std::string, std::string> &event);
+    void paramsUpdate(const ParamUpdateEvent &e);
 };

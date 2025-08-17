@@ -20,13 +20,13 @@ struct hvProgramParams
     // Data path
     HTuple hv_reconstruction_image_data_path;
     HTuple hv_calibration_images_dir;
-    HTuple hv_reconstruction_poses;
+    HTuple hv_poses_dir;
     HTuple hv_laser1_path;
     HTuple hv_laser2_path;
     HTuple hv_movement1_path;
     HTuple hv_movement2_path;
     HTuple hv_caltab_description_path;
-    HTuple hv_reconstruction_output_clouds_dir;
+    HTuple hv_reconstruction_output_dir;
     std::vector<HTuple> hv_output_cloud_paths;
 
     // Calibration parameters
@@ -55,13 +55,19 @@ struct hvSystemPoses
 
 enum class Path
 {
-    DataRoot,
+    PosesDir,
+
     CaltabDescription,
-    OutputModelRoot,
+    CalibrationImageDir,
+
+    ReconstructionImageDir,
+    ReconstructionOutputDir,
+
     CameraParameters,
     CameraPose,
     LightPlanePose,
     MovementPose,
+
     All
 };
 
@@ -76,8 +82,10 @@ class SystemParams
 public:
     static void init(const std::string &config_path, const Mode &mode);
     static SystemParams &instance();
-    void reload(const std::string &new_config_path);
+    void reload(const std::string &new_config_path, const Mode &mode);
     Mode getMode();
+    std::filesystem::path getConfigBaseDir();
+    void validatePaths(Path path) const;
 
     hvProgramParams hv_program_params_;
     hvSystemPoses hv_system_poses_;
@@ -107,9 +115,10 @@ private:
     void internalInitialize();
     void loadConfigFile();
     void loadPosesFiles();
-    void validatePaths(Path path) const;
+    void initFinished();
 
     json config_;
+    std::filesystem::path base_dir_;
     std::mutex mtx_;
     Mode mode_;
     static inline std::unique_ptr<SystemParams> instance_ = nullptr;

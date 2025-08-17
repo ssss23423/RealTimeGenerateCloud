@@ -1,6 +1,7 @@
 #pragma once
 
 #include <any>
+#include <atomic>
 #include <condition_variable>
 #include <functional>
 #include <list>
@@ -9,7 +10,9 @@
 #include <shared_mutex>
 #include <string>
 
+#include "params_event.h"
 #include "subscriber.h"
+#include "subscriber_adapter.h"
 #include "logger.h"
 #include "task_manager.h"
 #include "system_params.h"

@@ -434,7 +434,7 @@ void CalibrationTask::saveToFile()
 {
     // Save the calibration parameters
     // Create "Saved Poses" directory if it don't exist.
-    HTuple hv_saved_poses_dir = SystemParams::instance().hv_program_params_.hv_reconstruction_poses;
+    HTuple hv_saved_poses_dir = SystemParams::instance().hv_program_params_.hv_poses_dir;
     if (!std::filesystem::exists(hv_saved_poses_dir[0].S().Text()))
     {
         std::filesystem::create_directories(hv_saved_poses_dir[0].S().Text());

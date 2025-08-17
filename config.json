@@ -3,7 +3,9 @@
         "datatype": ".bil.zst",
         "imageWidth": 1280,
         "imageHeight": 800,
-        "fps": 120
+        "fps": 120,
+        "caltabDescription": "data/caltab_400.descr",
+        "poses": "data/saved_poses"
     },
     "camera": {
         "cx": 665.103,
@@ -13,11 +15,10 @@
         "focus": 0.0111401
     },
     "reconstruction": {
-        "imageData": "/data/project/GenerateCloud/data/imgs/bil_zst",
-        "parsedInsData": "/data/project/GenerateCloud/data/ins/parsed/parsed_check_fix_ins.xlsx",
-        "parsedLogData": "/data/project/GenerateCloud/data/logs/parsed/output.csv",
-        "poses": "/data/project/GenerateCloud/data/saved_poses",
-        "outputCloudsDir": "/data/project/GenerateCloud/data/clouds",
+        "imageData": "data/imgs/corrected",
+        "parsedInsData": "data/ins/parsed/parsed_check_fix_ins.xlsx",
+        "parsedLogData": "data/logs/parsed/output.csv",
+        "outputCloudsDir": "data/clouds",
         "minThreshold": 100,
         "roiRow1": 0,
         "roiCol1": 0,
@@ -25,8 +26,7 @@
         "roiCol2": 0
     },
     "calibration": {
-        "caltabDescription": "/data/project/GenerateCloud/data/caltab_400.descr",
-        "caltabImagesDir": "/data/project/GenerateCloud/data/caltab",
+        "caltabImagesDir": "data/caltab",
         "imageCount": 59,
         "minThreshold": 169,
         "stepCount": 45,

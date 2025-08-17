@@ -252,7 +252,7 @@ void ReconstructionTask::reconstruction()
                 {
                     std::string processed_time = this->getTime();
                     std::filesystem::path file_path = SystemParams::instance().valid_files_[file_idx];
-                    HTuple save_path = SystemParams::instance().hv_program_params_.hv_reconstruction_output_clouds_dir + "/" + file_path.stem().string().c_str() + "_" + processed_time.c_str();
+                    HTuple save_path = SystemParams::instance().hv_program_params_.hv_reconstruction_output_dir + "/" + file_path.stem().string().c_str() + "_" + processed_time.c_str();
                     WriteObjectModel3d(hv_object_model_affine_trans, "obj", save_path, HTuple(), HTuple());
 
                     std::string msg = "Save to " + std::string(save_path[0].S().Text());
