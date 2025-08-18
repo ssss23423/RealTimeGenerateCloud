@@ -28,6 +28,9 @@ if(WIN32)
 else()
     file(TO_CMAKE_PATH "$ENV{HALCONROOT}/examples" HALCONEXAMPLES)
     find_package(glfw3 REQUIRED)
+
+    file(TO_CMAKE_PATH "${CMAKE_SOURCE_DIR}/third_party/open3d-devel-linux-x86_64-cxx11-abi-cuda-0.19.0" Open3DROOT)
+    find_package(Open3D HINTS ${Open3DROOT}/lib/cmake)
 endif()
 
 find_package(OpenGL REQUIRED)

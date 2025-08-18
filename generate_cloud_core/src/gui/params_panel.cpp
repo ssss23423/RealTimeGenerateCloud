@@ -167,19 +167,27 @@ void ParamsPanel::render()
             ImGui::SameLine(120);
             if (state_.select_entire_frame)
             {
+#ifdef _WIN32
                 ImGui::TextDisabled(std::string(std::to_string(state_.reconstruction_roi_row1) + ", " +
                                                 std::to_string(state_.reconstruction_roi_col1) + ", " +
                                                 std::to_string(state_.reconstruction_roi_row2) + ", " +
                                                 std::to_string(state_.reconstruction_roi_col2))
                                         .c_str());
+#else
+                ImGui::TextDisabled("%d, %d, %d, %d", state_.reconstruction_roi_row1, state_.reconstruction_roi_col1, state_.reconstruction_roi_row2, state_.reconstruction_roi_col2);
+#endif
             }
             else
             {
+#ifdef _WIN32
                 ImGui::Text(std::string(std::to_string(state_.reconstruction_roi_row1) + ", " +
                                         std::to_string(state_.reconstruction_roi_col1) + ", " +
                                         std::to_string(state_.reconstruction_roi_row2) + ", " +
                                         std::to_string(state_.reconstruction_roi_col2))
                                 .c_str());
+#else
+                ImGui::Text("%d, %d, %d, %d", state_.reconstruction_roi_row1, state_.reconstruction_roi_col1, state_.reconstruction_roi_row2, state_.reconstruction_roi_col2);
+#endif
             }
         }
 
