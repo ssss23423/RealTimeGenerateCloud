@@ -130,7 +130,7 @@ void SystemParams::validatePaths(Path path) const
 {
     auto CheckPath = [this](const HTuple &path, const std::string &name)
     {
-        if (!std::filesystem::exists(path[0].S().Text()))
+        if (!std::filesystem::exists(path[0].S().Text()) || path[0].S().IsEmpty())
         {
             this->calibration_flag_ = true;
             throw std::runtime_error(name + " path invalid: " + path[0].S().Text());
@@ -229,6 +229,7 @@ void SystemParams::initFinished()
     ParamsInitEvent event;
 
     event.params.disable = false;
+    safe_copy(event.params.base_dir, this->base_dir_.string().c_str(), sizeof(event.params.base_dir));
     safe_copy(event.params.config_file_path, this->config_path_.c_str(), sizeof(event.params.config_file_path));
     safe_copy(event.params.poses_dir, this->hv_program_params_.hv_poses_dir[0].S().Text(), sizeof(event.params.poses_dir));
 

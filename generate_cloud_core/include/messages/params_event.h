@@ -7,6 +7,7 @@ struct ParamsPanelState
 {
     bool disable = true;
 
+    char base_dir[256] = {'\0'};
     char config_file_path[256] = {'\0'};
     char poses_dir[256] = {'\0'};
 
@@ -30,13 +31,13 @@ struct ParamsPanelState
     bool set_roi_flag = false;
     bool select_entire_frame = true;
 
-    int calibration_processed_images_num_ = 0;
-    int calibration_progress_bar_right_images_num_ = 0;
+    int calibration_processed_images_num = 0;
+    int calibration_progress_bar_right_images_num = 0;
 
-    int reconstruction_processed_file_num_ = 0;
-    int reconstruction_processed_frame_num_ = 0;
-    int reconstruction_progress_bar_right_valid_files_num_ = 0;
-    int reconstruction_progress_bar_right_frame_num_ = 0;
+    int reconstruction_processed_file_num = 0;
+    int reconstruction_processed_frame_num = 0;
+    int reconstruction_progress_bar_right_valid_files_num = 0;
+    int reconstruction_progress_bar_right_frame_num = 0;
 };
 
 struct ParamsInitEvent

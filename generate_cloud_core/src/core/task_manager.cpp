@@ -258,7 +258,7 @@ void TaskManager::initParamsUpdateMap()
             std::string val = std::any_cast<const std::string &>(event.value);
             auto full_path = std::filesystem::weakly_canonical(SystemParams::instance().getConfigBaseDir() / val);
             SystemParams::instance().hv_program_params_.hv_poses_dir = full_path.c_str();
-            SystemParams::instance().validatePaths(Path::CameraPose);
+            SystemParams::instance().validatePaths(Path::PosesDir);
         }
         catch (const std::exception &e)
         {

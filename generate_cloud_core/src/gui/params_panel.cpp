@@ -51,8 +51,9 @@ void ParamsPanel::render()
             ImGui::SameLine(120);
             if (ImGui::InputText("##Poses Dir", state_.poses_dir, IM_ARRAYSIZE(state_.poses_dir), ImGuiInputTextFlags_EnterReturnsTrue))
             {
-                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("poses_dir", std::make_any<std::string>(state_.poses_dir), "ui"));
-                AppController::instance().getLogger().log("Modified poses dir to " + std::string(state_.poses_dir));
+                auto full_path = std::filesystem::weakly_canonical(std::filesystem::path(state_.base_dir) / std::filesystem::path(state_.poses_dir));
+                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("poses_dir", std::make_any<std::string>(full_path.string()), "ui"));
+                AppController::instance().getLogger().log("Modified poses dir to " + full_path.string());
             }
         }
 
@@ -63,8 +64,9 @@ void ParamsPanel::render()
             ImGui::SameLine(120);
             if (ImGui::InputText("##Calibration Image Dir", state_.calibration_images_dir, IM_ARRAYSIZE(state_.calibration_images_dir), ImGuiInputTextFlags_EnterReturnsTrue))
             {
-                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("calibration_images_dir", std::make_any<std::string>(state_.calibration_images_dir), "ui"));
-                AppController::instance().getLogger().log("Modified calibration image dir to " + std::string(state_.calibration_images_dir));
+                auto full_path = std::filesystem::weakly_canonical(std::filesystem::path(state_.base_dir) / std::filesystem::path(state_.calibration_images_dir));
+                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("calibration_images_dir", std::make_any<std::string>(full_path.string()), "ui"));
+                AppController::instance().getLogger().log("Modified calibration image dir to " + full_path.string());
             }
 
             ImGui::AlignTextToFramePadding();
@@ -72,8 +74,9 @@ void ParamsPanel::render()
             ImGui::SameLine(120);
             if (ImGui::InputText("##Caltab Description", state_.caltab_description, IM_ARRAYSIZE(state_.caltab_description), ImGuiInputTextFlags_EnterReturnsTrue))
             {
-                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("caltab_description", std::make_any<std::string>(state_.caltab_description), "ui"));
-                AppController::instance().getLogger().log("Modified caltab description to " + std::string(state_.caltab_description));
+                auto full_path = std::filesystem::weakly_canonical(std::filesystem::path(state_.base_dir) / std::filesystem::path(state_.caltab_description));
+                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("caltab_description", std::make_any<std::string>(full_path.string()), "ui"));
+                AppController::instance().getLogger().log("Modified caltab description to " + full_path.string());
             }
 
             ImGui::AlignTextToFramePadding();
@@ -134,8 +137,9 @@ void ParamsPanel::render()
             ImGui::SameLine(120);
             if (ImGui::InputText("##Reconstruction Image Dir", state_.reconstruction_image_data, IM_ARRAYSIZE(state_.reconstruction_image_data), ImGuiInputTextFlags_EnterReturnsTrue))
             {
-                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("reconstruction_image_data", std::make_any<std::string>(state_.reconstruction_image_data), "ui"));
-                AppController::instance().getLogger().log("Modified reconstruction image dir to " + std::string(state_.reconstruction_image_data));
+                auto full_path = std::filesystem::weakly_canonical(std::filesystem::path(state_.base_dir) / std::filesystem::path(state_.reconstruction_image_data));
+                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("reconstruction_image_data", std::make_any<std::string>(full_path.string()), "ui"));
+                AppController::instance().getLogger().log("Modified reconstruction image dir to " + full_path.string());
             }
 
             ImGui::AlignTextToFramePadding();
@@ -143,8 +147,9 @@ void ParamsPanel::render()
             ImGui::SameLine(120);
             if (ImGui::InputText("##Reconstruction Output Dir", state_.reconstruction_output_cloud_dir, IM_ARRAYSIZE(state_.reconstruction_output_cloud_dir), ImGuiInputTextFlags_EnterReturnsTrue))
             {
-                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("reconstruction_output_cloud_dir", std::make_any<std::string>(state_.reconstruction_output_cloud_dir), "ui"));
-                AppController::instance().getLogger().log("Modified reconstruction output dir to " + std::string(state_.reconstruction_output_cloud_dir));
+                auto full_path = std::filesystem::weakly_canonical(std::filesystem::path(state_.base_dir) / std::filesystem::path(state_.reconstruction_output_cloud_dir));
+                AppController::instance().publish("params_update", std::make_any<ParamUpdateEvent>("reconstruction_output_cloud_dir", std::make_any<std::string>(full_path.string()), "ui"));
+                AppController::instance().getLogger().log("Modified reconstruction output dir to " + full_path.string());
             }
 
             ImGui::AlignTextToFramePadding();
