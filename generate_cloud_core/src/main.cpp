@@ -10,7 +10,8 @@
 #include "cli_app.h"
 
 #ifdef _WIN32
-const std::string default_config_path = "D:/Projects/GenerateCloud/config.json";
+//const std::string default_config_path = "D:/code/RealTimeGenerateCloud/config.json";
+const std::string default_config_path = "D:/jiguang_3D/data_tran_3D/RealTimeGenerateCloud/config.json";
 #else
 const std::string default_config_path = "/data/project/GenerateCloud/config.json";
 #endif

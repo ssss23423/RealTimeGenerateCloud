@@ -1,0 +1,6520 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/bin/GenerateCloudCore.exe"
+		},
+		{
+			"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/bin/GenerateCloudCore.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"set_target_properties",
+			"find_package",
+			"include",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"C:/Users/Wiles/AppData/Roaming/MVTec/HALCON-24.11-Progress-Steady/examples/cmake/FindHALCON.cmake",
+			"C:/Users/Wiles/AppData/Roaming/MVTec/HALCON-24.11-Progress-Steady/examples/cmake/UseHALCON.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 86,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 103,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 110,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 111,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 112,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 113,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 56,
+				"parent" : 0
+			},
+			{
+				"file" : 2,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 33,
+				"parent" : 8
+			},
+			{
+				"file" : 1,
+				"parent" : 9
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 915,
+				"parent" : 10
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 58,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 88,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -std:c++20 -MDd"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 6,
+					"define" : "FMT_HEADER_ONLY=0"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "FMT_STRING_ALIAS=1"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "FMT_USE_WINDOWS_H=0"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "GLEW_STATIC"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "_GLIBCXX_USE_CXX11_ABI=1"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 12,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/include"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/third_party"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/include/cli"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/include/core"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/include/gui"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/include/messages"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/third_party/cmdline"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/third_party/nlohmann"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/third_party/imgui"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/third_party/imgui/backends"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/third_party/glfw/GLFW"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "C:/Users/Wiles/AppData/Local/Programs/MVTec/HALCON-24.11-Progress-Steady/include/halconcpp"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "C:/Users/Wiles/AppData/Local/Programs/MVTec/HALCON-24.11-Progress-Steady/include"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "D:/Application/OpenCV/include"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/third_party/open3d-devel-windows-amd64-0.19.0/include"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "D:/code/RealTimeGenerateCloud/generate_cloud_core/third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					5,
+					6
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				992,
+				993,
+				994,
+				995,
+				996,
+				997,
+				998,
+				999,
+				1000,
+				1001,
+				1002,
+				1003,
+				1004,
+				1005,
+				1006,
+				1007,
+				1008,
+				1009,
+				1010,
+				1011,
+				1012,
+				1013,
+				1014,
+				1015
+			]
+		}
+	],
+	"id" : "GenerateCloudCore::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "D:\\code\\RealTimeGenerateCloud\\generate_cloud_core\\third_party\\glfw\\lib-vc2022\\glfw3.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "opengl32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "C:\\Users\\Wiles\\AppData\\Local\\Programs\\MVTec\\HALCON-24.11-Progress-Steady\\lib\\x64-win64\\halconcpp.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "D:\\Application\\OpenCV\\x64\\vc17\\lib\\opencv_world4110d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "D:\\code\\RealTimeGenerateCloud\\generate_cloud_core\\third_party\\open3d-devel-windows-amd64-0.19.0\\lib\\Open3D.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 11,
+				"fragment" : "C:\\Users\\Wiles\\AppData\\Local\\Programs\\MVTec\\HALCON-24.11-Progress-Steady\\lib\\x64-win64\\halcon.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "GenerateCloudCore",
+	"nameOnDisk" : "GenerateCloudCore.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128,
+				129,
+				130,
+				131,
+				132,
+				133,
+				134,
+				135,
+				136,
+				137,
+				138,
+				139,
+				140,
+				141,
+				142,
+				143,
+				144,
+				145,
+				146,
+				147,
+				148,
+				149,
+				150,
+				151,
+				152,
+				153,
+				154,
+				155,
+				156,
+				157,
+				158,
+				159,
+				160,
+				161,
+				162,
+				163,
+				164,
+				165,
+				166,
+				167,
+				168,
+				169,
+				170,
+				171,
+				172,
+				173,
+				174,
+				175,
+				176,
+				177,
+				178,
+				179,
+				180,
+				181,
+				182,
+				183,
+				184,
+				185,
+				186,
+				187,
+				188,
+				189,
+				190,
+				191,
+				192,
+				193,
+				194,
+				195,
+				196,
+				197,
+				198,
+				199,
+				200,
+				201,
+				202,
+				203,
+				204,
+				205,
+				206,
+				207,
+				208,
+				209,
+				210,
+				211,
+				212,
+				213,
+				214,
+				215,
+				216,
+				217,
+				218,
+				219,
+				220,
+				221,
+				222,
+				223,
+				224,
+				225,
+				226,
+				227,
+				228,
+				229,
+				230,
+				231,
+				232,
+				233,
+				234,
+				235,
+				236,
+				237,
+				238,
+				239,
+				240,
+				241,
+				242,
+				243,
+				244,
+				245,
+				246,
+				247,
+				248,
+				249,
+				250,
+				251,
+				252,
+				253,
+				254,
+				255,
+				256,
+				257,
+				258,
+				259,
+				260,
+				261,
+				262,
+				263,
+				264,
+				265,
+				266,
+				267,
+				268,
+				269,
+				270,
+				271,
+				272,
+				273,
+				274,
+				275,
+				276,
+				277,
+				278,
+				279,
+				280,
+				281,
+				282,
+				283,
+				284,
+				285,
+				286,
+				287,
+				288,
+				289,
+				290,
+				291,
+				292,
+				293,
+				294,
+				295,
+				296,
+				297,
+				298,
+				299,
+				300,
+				301,
+				302,
+				303,
+				304,
+				305,
+				306,
+				307,
+				308,
+				309,
+				310,
+				311,
+				312,
+				313,
+				314,
+				315,
+				316,
+				317,
+				318,
+				319,
+				320,
+				321,
+				322,
+				323,
+				324,
+				325,
+				326,
+				327,
+				328,
+				329,
+				330,
+				331,
+				332,
+				333,
+				334,
+				335,
+				336,
+				337,
+				338,
+				339,
+				340,
+				341,
+				342,
+				343,
+				344,
+				345,
+				346,
+				347,
+				348,
+				349,
+				350,
+				351,
+				352,
+				353,
+				354,
+				355,
+				356,
+				357,
+				358,
+				359,
+				360,
+				361,
+				362,
+				363,
+				364,
+				365,
+				366,
+				367,
+				368,
+				369,
+				370,
+				371,
+				372,
+				373,
+				374,
+				375,
+				376,
+				377,
+				378,
+				379,
+				380,
+				381,
+				382,
+				383,
+				384,
+				385,
+				386,
+				387,
+				388,
+				389,
+				390,
+				391,
+				392,
+				393,
+				394,
+				395,
+				396,
+				397,
+				398,
+				399,
+				400,
+				401,
+				402,
+				403,
+				404,
+				405,
+				406,
+				407,
+				408,
+				409,
+				410,
+				411,
+				412,
+				413,
+				414,
+				415,
+				416,
+				417,
+				418,
+				419,
+				420,
+				421,
+				422,
+				423,
+				424,
+				425,
+				426,
+				427,
+				428,
+				429,
+				430,
+				431,
+				432,
+				433,
+				434,
+				435,
+				436,
+				437,
+				438,
+				439,
+				440,
+				441,
+				442,
+				443,
+				444,
+				445,
+				446,
+				447,
+				448,
+				449,
+				450,
+				451,
+				452,
+				453,
+				454,
+				455,
+				456,
+				457,
+				458,
+				459,
+				460,
+				461,
+				462,
+				463,
+				464,
+				465,
+				466,
+				467,
+				468,
+				469,
+				470,
+				471,
+				472,
+				473,
+				474,
+				475,
+				476,
+				477,
+				478,
+				479,
+				480,
+				481,
+				482,
+				483,
+				484,
+				485,
+				486,
+				487,
+				488,
+				489,
+				490,
+				491,
+				492,
+				493,
+				494,
+				495,
+				496,
+				497,
+				498,
+				499,
+				500,
+				501,
+				502,
+				503,
+				504,
+				505,
+				506,
+				507,
+				508,
+				509,
+				510,
+				511,
+				512,
+				513,
+				514,
+				515,
+				516,
+				517,
+				518,
+				519,
+				520,
+				521,
+				522,
+				523,
+				524,
+				525,
+				526,
+				527,
+				528,
+				529,
+				530,
+				531,
+				532,
+				533,
+				534,
+				535,
+				536,
+				537,
+				538,
+				539,
+				540,
+				541,
+				542,
+				543,
+				544,
+				545,
+				546,
+				547,
+				548,
+				549,
+				550,
+				551,
+				552,
+				553,
+				554,
+				555,
+				556,
+				557,
+				558,
+				559,
+				560,
+				561,
+				562,
+				563,
+				564,
+				565,
+				566,
+				567,
+				568,
+				569,
+				570,
+				571,
+				572,
+				573,
+				574,
+				575,
+				576,
+				577,
+				578,
+				579,
+				580,
+				581,
+				582,
+				583,
+				584,
+				585,
+				586,
+				587,
+				588,
+				589,
+				590,
+				591,
+				592,
+				593,
+				594,
+				595,
+				596,
+				597,
+				598,
+				599,
+				600,
+				601,
+				602,
+				603,
+				604,
+				605,
+				606,
+				607,
+				608,
+				609,
+				610,
+				611,
+				612,
+				613,
+				614,
+				615,
+				616,
+				617,
+				618,
+				619,
+				620,
+				621,
+				622,
+				623,
+				624,
+				625,
+				626,
+				627,
+				628,
+				629,
+				630,
+				631,
+				632,
+				633,
+				634,
+				635,
+				636,
+				637,
+				638,
+				639,
+				640,
+				641,
+				642,
+				643,
+				644,
+				645,
+				646,
+				647,
+				648,
+				649,
+				650,
+				651,
+				652,
+				653,
+				654,
+				655,
+				656,
+				657,
+				658,
+				659,
+				660,
+				661,
+				662,
+				663,
+				664,
+				665,
+				666,
+				667,
+				668,
+				669,
+				670,
+				671,
+				672,
+				673,
+				674,
+				675,
+				676,
+				677,
+				678,
+				679,
+				680,
+				681,
+				682,
+				683,
+				684,
+				685,
+				686,
+				687,
+				688,
+				689,
+				690,
+				691,
+				692,
+				693,
+				694,
+				695,
+				696,
+				697,
+				698,
+				699,
+				700,
+				701,
+				702,
+				703,
+				704,
+				705,
+				706,
+				707,
+				708,
+				709,
+				710,
+				711,
+				712,
+				713,
+				714,
+				715,
+				716,
+				717,
+				718,
+				719,
+				720,
+				721,
+				722,
+				723,
+				724,
+				725,
+				726,
+				727,
+				728,
+				729,
+				730,
+				731,
+				732,
+				733,
+				734,
+				735,
+				736,
+				737,
+				738,
+				739,
+				740,
+				741,
+				742,
+				743,
+				744,
+				745,
+				746,
+				747,
+				748,
+				749,
+				750,
+				751,
+				752,
+				753,
+				754,
+				755,
+				756,
+				757,
+				758,
+				759,
+				760,
+				761,
+				762,
+				763,
+				764,
+				765,
+				766,
+				767,
+				768,
+				769,
+				770,
+				771,
+				772,
+				773,
+				774,
+				775,
+				776,
+				777,
+				778,
+				779,
+				780,
+				781,
+				782,
+				783,
+				784,
+				785,
+				786,
+				787,
+				788,
+				789,
+				790,
+				791,
+				792,
+				793,
+				794,
+				795,
+				796,
+				797,
+				798,
+				799,
+				800,
+				801,
+				802,
+				803,
+				804,
+				805,
+				806,
+				807,
+				808,
+				809,
+				810,
+				811,
+				812,
+				813,
+				814,
+				815,
+				816,
+				817,
+				818,
+				819,
+				820,
+				821,
+				822,
+				823,
+				824,
+				825,
+				826,
+				827,
+				828,
+				829,
+				830,
+				831,
+				832,
+				833,
+				834,
+				835,
+				836,
+				837,
+				838,
+				839,
+				840,
+				841,
+				842,
+				843,
+				844,
+				845,
+				846,
+				847,
+				848,
+				849,
+				850,
+				851,
+				852,
+				853,
+				854,
+				855,
+				856,
+				857,
+				858,
+				859,
+				860,
+				861,
+				862,
+				863,
+				864,
+				865,
+				866,
+				867,
+				868,
+				869,
+				870,
+				871,
+				872,
+				873,
+				874,
+				875,
+				876,
+				877,
+				878,
+				879,
+				880,
+				881,
+				882,
+				883,
+				884,
+				885,
+				886,
+				887,
+				888,
+				889,
+				890,
+				891,
+				892,
+				893,
+				894,
+				895,
+				896,
+				897,
+				898,
+				899,
+				900,
+				901,
+				902,
+				903,
+				904,
+				905,
+				906,
+				907,
+				908,
+				909,
+				910,
+				911,
+				912,
+				913,
+				914,
+				915,
+				916,
+				917,
+				918,
+				919,
+				920,
+				921,
+				922,
+				923,
+				924,
+				925,
+				926,
+				927,
+				928,
+				929,
+				930,
+				931,
+				932,
+				933,
+				934,
+				935,
+				936,
+				937,
+				938,
+				939,
+				940,
+				941,
+				942,
+				943,
+				944,
+				945,
+				946,
+				947,
+				948,
+				949,
+				950,
+				951,
+				952,
+				953,
+				954,
+				955,
+				956,
+				957,
+				958,
+				959,
+				960,
+				961,
+				962,
+				963,
+				964,
+				965,
+				966,
+				967,
+				968,
+				969,
+				970,
+				971,
+				972,
+				973,
+				974,
+				975,
+				976,
+				977,
+				978,
+				979,
+				980,
+				981,
+				982,
+				983,
+				984,
+				985,
+				986,
+				987,
+				988,
+				989,
+				990,
+				991
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				992,
+				993,
+				994,
+				995,
+				996,
+				997,
+				998,
+				999,
+				1000,
+				1001,
+				1002,
+				1003,
+				1004,
+				1005,
+				1006,
+				1007,
+				1008,
+				1009,
+				1010,
+				1011,
+				1012,
+				1013,
+				1014,
+				1015
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "include/cli/cli_app.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/app_controller.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/calibration_task.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/logger.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/merger_task.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/real_time_reconstruction_task.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/reconstruction_task.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/subscriber.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/subscriber_adapter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/system_params.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/task.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/core/task_manager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/app.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/calibration_page.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/disabled_block.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/log_panel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/main_window.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/params_panel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/reconstruction_page.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/gui/task_panel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/messages/params_event.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/cmdline/cmdline.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/glfw/GLFW/glfw3.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/glfw/GLFW/glfw3native.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/backends/imgui_impl_glfw.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/backends/imgui_impl_opengl3.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/backends/imgui_impl_opengl3_loader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/imconfig.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/imgui.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/imgui_internal.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/imstb_rectpack.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/imstb_textedit.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/imgui/imstb_truetype.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock-actions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock-cardinalities.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock-function-mocker.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock-matchers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock-more-actions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock-more-matchers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock-nice-strict.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock-spec-builders.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/gmock.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/internal/custom/gmock-generated-actions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/internal/custom/gmock-matchers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/internal/custom/gmock-port.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/internal/gmock-internal-utils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/internal/gmock-port.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gmock/internal/gmock-pp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest-death-test.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest-matchers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest-message.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest-param-test.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest-printers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest-spi.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest-test-part.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest-typed-test.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest_pred_impl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/gtest_prod.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/custom/gtest-port.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/custom/gtest-printers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/custom/gtest.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/gtest-death-test-internal.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/gtest-filepath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/gtest-internal.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/gtest-param-util.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/gtest-port-arch.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/gtest-port.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/gtest-string.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/gtest/internal/gtest-type-util.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Cholesky/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Cholesky/LDLT.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Cholesky/LLT.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Cholesky/LLT_LAPACKE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/CholmodSupport/CholmodSupport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/CholmodSupport/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/ArithmeticSequence.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Array.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/ArrayBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/ArrayWrapper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Assign.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/AssignEvaluator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Assign_MKL.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/BandMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Block.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/BooleanRedux.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/CommaInitializer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/ConditionEstimator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/CoreEvaluators.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/CoreIterators.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/CwiseBinaryOp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/CwiseNullaryOp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/CwiseTernaryOp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/CwiseUnaryOp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/CwiseUnaryView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/DenseBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/DenseCoeffsBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/DenseStorage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Diagonal.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/DiagonalMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/DiagonalProduct.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Dot.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/EigenBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/ForceAlignedAccess.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Fuzzy.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/GeneralProduct.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/GenericPacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/GlobalFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/IO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/IndexedView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Inverse.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Map.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/MapBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/MathFunctionsImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Matrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/MatrixBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/NestByValue.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/NoAlias.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/NumTraits.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/PartialReduxEvaluator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/PermutationMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/PlainObjectBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Product.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/ProductEvaluators.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Random.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Redux.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Ref.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Replicate.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Reshaped.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/ReturnByValue.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Reverse.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Select.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/SelfAdjointView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/SelfCwiseBinaryOp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Solve.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/SolveTriangular.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/SolverBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/StableNorm.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/StlIterators.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Stride.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Swap.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Transpose.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Transpositions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/TriangularMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/VectorBlock.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/VectorwiseOp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/Visitor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/Complex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AVX/TypeCasting.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/Complex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AVX512/TypeCasting.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/Complex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/MatrixProduct.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/MatrixProductCommon.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/MatrixProductMMA.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/AltiVec/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/Default/BFloat16.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/Default/ConjHelper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/Default/Half.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/Default/Settings.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/Default/TypeCasting.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/Complex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/Tuple.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/GPU/TypeCasting.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/HIP/hcc/math_constants.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/Complex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/MSA/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/Complex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/TypeCasting.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/NEON/UnaryFunctors.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/Complex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SSE/TypeCasting.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SVE/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SVE/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SVE/TypeCasting.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/InteropHeaders.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/SyclMemoryModel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/SYCL/TypeCasting.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/Complex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/MathFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/arch/ZVector/PacketMath.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/functors/AssignmentFunctors.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/functors/BinaryFunctors.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/functors/NullaryFunctors.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/functors/StlFunctors.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/functors/TernaryFunctors.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/functors/UnaryFunctors.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/GeneralBlockPanelKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/Parallelizer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointProduct.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/SelfadjointRank2Update.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/products/TriangularSolverVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/BlasUtil.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/ConfigureVectorization.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/Constants.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/DisableStupidWarnings.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/ForwardDeclarations.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/IndexedViewHelper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/IntegralConstant.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/MKL_support.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/Macros.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/Memory.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/Meta.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/NonMPL2.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/ReenableStupidWarnings.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/ReshapedHelper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/Serializer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/StaticAssert.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/SymbolicIndex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Core/util/XprHelper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/ComplexEigenSolver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/ComplexSchur.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/ComplexSchur_LAPACKE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/EigenSolver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/HessenbergDecomposition.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/RealQZ.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/RealSchur.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/RealSchur_LAPACKE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/SelfAdjointEigenSolver_LAPACKE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Eigenvalues/Tridiagonalization.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/AlignedBox.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/AngleAxis.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/EulerAngles.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/Homogeneous.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/Hyperplane.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/OrthoMethods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/ParametrizedLine.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/Quaternion.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/Rotation2D.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/RotationBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/Scaling.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/Transform.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/Translation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/Umeyama.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Geometry/arch/Geometry_SIMD.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Householder/BlockHouseholder.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Householder/Householder.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Householder/HouseholderSequence.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Householder/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Jacobi/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/Jacobi/Jacobi.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/KLUSupport/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/KLUSupport/KLUSupport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/LU/Determinant.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/LU/FullPivLU.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/LU/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/LU/InverseImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/LU/PartialPivLU.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/LU/PartialPivLU_LAPACKE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/LU/arch/InverseSize4.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/MetisSupport/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/MetisSupport/MetisSupport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/OrderingMethods/Amd.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/OrderingMethods/Eigen_Colamd.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/OrderingMethods/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/OrderingMethods/Ordering.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/PaStiXSupport/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/PaStiXSupport/PaStiXSupport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/PardisoSupport/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/PardisoSupport/PardisoSupport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/QR/ColPivHouseholderQR.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/QR/CompleteOrthogonalDecomposition.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/QR/FullPivHouseholderQR.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/QR/HouseholderQR.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/QR/HouseholderQR_LAPACKE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/QR/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SPQRSupport/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SPQRSupport/SuiteSparseQRSupport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SVD/BDCSVD.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SVD/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SVD/JacobiSVD.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SVD/JacobiSVD_LAPACKE.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SVD/SVDBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SVD/UpperBidiagonalization.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCholesky/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCholesky/SimplicialCholesky.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/AmbiVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/CompressedStorage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/MappedSparseMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseAssign.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseBlock.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseColEtree.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseCompressedBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseCwiseBinaryOp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseCwiseUnaryOp.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseDenseProduct.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseDiagonalProduct.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseDot.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseFuzzy.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseMap.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseMatrixBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparsePermutation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseProduct.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseRedux.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseRef.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseSelfAdjointView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseSolverBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseSparseProductWithPruning.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseTranspose.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseTriangularView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseUtil.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/SparseView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseCore/TriangularSolver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLUImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_Memory.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_Structs.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_Utils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_column_bmod.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_column_dfs.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_gemm_kernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_kernel_bmod.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_panel_bmod.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_panel_dfs.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_pivotL.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_pruneL.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseLU/SparseLU_relax_snode.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseQR/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SparseQR/SparseQR.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/StlSupport/StdDeque.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/StlSupport/StdList.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/StlSupport/StdVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/StlSupport/details.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SuperLUSupport/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/SuperLUSupport/SuperLUSupport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/UmfPackSupport/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/UmfPackSupport/UmfPackSupport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/misc/Image.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/misc/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/misc/Kernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/misc/RealSvd2x2.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/misc/blas.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/misc/lapack.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/misc/lapacke.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/misc/lapacke_mangling.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/ArrayCwiseBinaryOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/ArrayCwiseUnaryOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/BlockMethods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/CommonCwiseBinaryOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/CommonCwiseUnaryOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/IndexedViewMethods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/InternalHeaderCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/MatrixCwiseBinaryOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/MatrixCwiseUnaryOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/Eigen/src/plugins/ReshapedMethods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/GL/eglew.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/GL/glew.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/GL/glxew.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/GL/wglew.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/GLFW/glfw3.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/GLFW/glfw3native.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/backend/BufferDescriptor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/backend/DriverEnums.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/backend/Handle.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/backend/PipelineState.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/backend/PixelBufferDescriptor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/backend/Platform.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/backend/PresentCallable.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/backend/TargetBufferInfo.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/camutils/Bookmark.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/camutils/Manipulator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filamat/Enums.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filamat/IncludeCallback.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filamat/MaterialBuilder.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filamat/Package.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Box.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Camera.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Color.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/ColorGrading.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/DebugRegistry.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Engine.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Exposure.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Fence.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/FilamentAPI.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Frustum.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/IndexBuffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/IndirectLight.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/LightManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Material.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/MaterialChunkType.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/MaterialEnums.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/MaterialInstance.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/RenderTarget.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/RenderableManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Renderer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Scene.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Skybox.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Stream.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/SwapChain.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Texture.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/TextureSampler.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/TransformManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/VertexBuffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/View.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filament/Viewport.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/filameshio/MeshReader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/args.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/chrono.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/color.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/compile.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/core.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/format-inl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/format.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/os.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/ostream.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/printf.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/ranges.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/std.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/fmt/xchar.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/geometry/SurfaceOrientation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/gltfio/Animator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/gltfio/AssetLoader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/gltfio/FilamentAsset.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/gltfio/FilamentInstance.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/gltfio/Image.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/gltfio/MaterialProvider.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/gltfio/ResourceLoader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/ibl/Cubemap.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/ibl/CubemapIBL.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/ibl/CubemapSH.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/ibl/CubemapUtils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/ibl/Image.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/ibl/utilities.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/image/ColorTransform.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/image/ImageOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/image/ImageSampler.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/image/KtxBundle.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/image/KtxUtility.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/image/LinearImage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/matdbg/DebugServer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/matdbg/JsonWriter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/matdbg/ShaderExtractor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/matdbg/ShaderInfo.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/matdbg/ShaderReplacer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/matdbg/TextWriter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/TMatHelpers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/TQuatHelpers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/TVecHelpers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/compiler.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/fast.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/half.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/mat2.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/mat3.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/mat4.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/mathfwd.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/norm.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/quat.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/scalar.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/vec2.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/vec3.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/math/vec4.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/mathio/ostream.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/trie/htrie_hash.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/trie/htrie_map.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/trie/htrie_set.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/tsl/robin_growth_policy.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/tsl/robin_hash.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/tsl/robin_map.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/tsl/robin_set.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/Allocator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/BitmaskEnum.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/CString.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/Entity.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/EntityInstance.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/EntityManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/Log.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/Mutex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/NameComponentManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/Path.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/SingleInstanceComponentManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/Slice.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/SpinLock.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/StructureOfArrays.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/ThreadLocal.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/algorithm.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/bitset.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/compiler.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/generic/Mutex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/memalign.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/ostream.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/utils/unwindows.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/viewer/AutomationEngine.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/viewer/AutomationSpec.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/viewer/Settings.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/3rdparty/viewer/SimpleViewer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/Macro.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/Open3D.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/Open3DConfig.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/camera/PinholeCameraIntrinsic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/camera/PinholeCameraParameters.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/camera/PinholeCameraTrajectory.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/AdvancedIndexing.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/Atomic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/Blob.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/CUDAUtils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/DLPack.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/Device.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/Dispatch.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/Dtype.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/EigenConverter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/FunctionTraits.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/Indexer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/MemoryManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/MemoryManagerStatistic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/ParallelFor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/ParallelForSYCL.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/SYCLContext.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/SYCLUtils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/Scalar.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/ShapeUtil.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/SizeVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/SmallVector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/StdAllocator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/Tensor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/TensorCheck.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/TensorFunction.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/TensorInit.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/TensorKey.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/TensorList.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/CPU/TBBHashBackend.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/CUDA/CUDAHashBackendBufferAccessor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/CUDA/SlabHashBackend.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/CUDA/SlabHashBackendImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/CUDA/SlabMacros.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/CUDA/SlabNodeManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/CUDA/SlabTraits.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/CUDA/StdGPUHashBackend.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/DeviceHashBackend.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/Dispatch.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/HashBackendBuffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/HashMap.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/hashmap/HashSet.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/kernel/Arange.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/kernel/BinaryEW.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/kernel/IndexGetSet.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/kernel/IndexReduction.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/kernel/Kernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/kernel/NonZero.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/kernel/Reduction.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/kernel/UnaryEW.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/AddMM.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/BlasWrapper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/Det.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/Inverse.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/LU.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/LUImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/LapackWrapper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/LeastSquares.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/LinalgHeadersCPU.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/LinalgHeadersCUDA.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/LinalgUtils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/Matmul.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/SVD.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/Solve.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/Tri.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/TriImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/kernel/Matrix.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/linalg/kernel/SVD3x3.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/FixedRadiusIndex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/FixedRadiusSearchImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/KnnIndex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/MemoryAllocation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/NNSIndex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/NanoFlannImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/NanoFlannIndex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/NearestNeighborSearch.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/NeighborSearchAllocator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/core/nns/NeighborSearchCommon.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/data/Dataset.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/BoundingVolume.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/Geometry.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/Geometry2D.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/Geometry3D.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/HalfEdgeTriangleMesh.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/Image.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/IntersectionTest.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/KDTreeFlann.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/KDTreeSearchParam.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/Keypoint.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/Line3D.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/LineSet.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/MeshBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/Octree.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/PointCloud.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/Qhull.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/RGBDImage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/TetraMesh.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/TriangleMesh.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/geometry/VoxelGrid.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/FeatureIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/FileFormatIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/IJsonConvertibleIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/ImageIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/ImageWarpingFieldIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/LineSetIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/ModelIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/OctreeIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/PinholeCameraTrajectoryIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/PointCloudIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/PoseGraphIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/TriangleMeshIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/VoxelGridIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/BufferConnection.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/Connection.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/ConnectionBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/DummyMessageProcessor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/DummyReceiver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/MessageProcessorBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/MessageUtils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/Messages.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/RemoteFunctions.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/ZMQContext.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/rpc/ZMQReceiver.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/RGBDRecorder.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/RGBDSensor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/RGBDSensorConfig.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/azure_kinect/AzureKinectRecorder.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/azure_kinect/AzureKinectSensor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/azure_kinect/AzureKinectSensorConfig.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/azure_kinect/K4aPlugin.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/azure_kinect/MKVMetadata.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/azure_kinect/MKVReader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/azure_kinect/MKVWriter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/io/sensor/azure_kinect/PluginMacros.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/Helper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/ShapeChecking.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/contrib/Cloud.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/contrib/GridSubsampling.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/contrib/IoU.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/contrib/IoUImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/contrib/Nms.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/contrib/RoiPoolKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/contrib/cuda_utils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/continuous_conv/ContinuousConv.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/continuous_conv/ContinuousConvBackpropFilter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/continuous_conv/ContinuousConvCUDAKernels.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/continuous_conv/ContinuousConvTranspose.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/continuous_conv/ContinuousConvTransposeBackpropFilter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/continuous_conv/ContinuousConvTypes.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/continuous_conv/CoordinateTransformation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/misc/InvertNeighborsList.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/misc/MemoryAllocation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/misc/NeighborSearchCommon.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/misc/RaggedToDense.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/misc/ReduceSubarraysSum.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/misc/VoxelPooling.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/misc/Voxelize.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/sparse_conv/SparseConv.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/sparse_conv/SparseConvBackpropFilter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/sparse_conv/SparseConvCUDAKernels.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/sparse_conv/SparseConvTranspose.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/impl/sparse_conv/SparseConvTransposeBackpropFilter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/TorchHelper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/continuous_conv/ContinuousConvBackpropFilterOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/continuous_conv/ContinuousConvHelper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/continuous_conv/ContinuousConvOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/continuous_conv/ContinuousConvTransposeBackpropFilterOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/continuous_conv/ContinuousConvTransposeOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/misc/InvertNeighborsListOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/misc/InvertNeighborsListOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/misc/NeighborSearchAllocator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/misc/RaggedToDenseOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/misc/ReduceSubarraysSumOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/misc/ReduceSubarraysSumOps.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/misc/VoxelizeOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/pointnet/BallQueryKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/pointnet/InterpolateKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/pointnet/SamplingKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/pvcnn/TrilinearDevoxelizeKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/ragged_tensor/RaggedTensor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/sparse_conv/SparseConvBackpropFilterOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/sparse_conv/SparseConvOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/sparse_conv/SparseConvTransposeBackpropFilterOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/pytorch/sparse_conv/SparseConvTransposeOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/TensorFlowHelper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/continuous_conv/ContinuousConvBackpropFilterOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/continuous_conv/ContinuousConvOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/continuous_conv/ContinuousConvTransposeBackpropFilterOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/continuous_conv/ContinuousConvTransposeOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/BuildSpatialHashTableOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/FixedRadiusSearchOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/InvertNeighborsListOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/KnnSearchOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/NmsOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/RadiusSearchOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/ReduceSubarraysSumOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/VoxelPoolingGradOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/VoxelPoolingOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/misc/VoxelizeOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/pointnet/BallQueryOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/pointnet/InterpolateOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/pointnet/RoiPoolOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/pointnet/SamplingOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/pvcnn/TrilinearDevoxelizeKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/sparse_conv/SparseConvBackpropFilterOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/sparse_conv/SparseConvOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/sparse_conv/SparseConvTransposeBackpropFilterOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/ml/tensorflow/sparse_conv/SparseConvTransposeOpKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/color_map/ColorMapUtils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/color_map/ImageWarpingField.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/color_map/NonRigidOptimizer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/color_map/RigidOptimizer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/integration/MarchingCubesConst.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/integration/ScalableTSDFVolume.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/integration/TSDFVolume.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/integration/UniformTSDFVolume.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/odometry/Odometry.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/odometry/OdometryOption.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/odometry/RGBDOdometryJacobian.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/ColoredICP.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/CorrespondenceChecker.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/FastGlobalRegistration.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/Feature.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/GeneralizedICP.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/GlobalOptimization.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/GlobalOptimizationConvergenceCriteria.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/GlobalOptimizationMethod.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/PoseGraph.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/Registration.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/RobustKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/pipelines/registration/TransformationEstimation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/BoundingVolume.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/DrawableGeometry.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/Geometry.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/Image.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/LineSet.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/PointCloud.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/RGBDImage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/RaycastingScene.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/TensorMap.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/TriangleMesh.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/Utility.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/VoxelBlockGrid.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/VtkUtils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/GeometryIndexer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/GeometryMacros.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/IPPImage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/Image.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/ImageImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/Metrics.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/NPPImage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/PCAPartition.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/PointCloud.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/PointCloudImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/Transform.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/TransformImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/TriangleMesh.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/TriangleMeshImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/UVUnwrapping.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/VoxelBlockGrid.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/geometry/kernel/VoxelBlockGridImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/HashMapIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/ImageIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/NumpyIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/PointCloudIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/TriangleMeshIO.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/sensor/RGBDSensor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/sensor/RGBDVideoMetadata.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/sensor/RGBDVideoReader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/sensor/realsense/RSBagReader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/sensor/realsense/RealSensePrivate.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/sensor/realsense/RealSenseSensor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/io/sensor/realsense/RealSenseSensorConfig.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/Feature.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/FeatureImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/FillInLinearSystem.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/FillInLinearSystemImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/RGBDOdometry.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/RGBDOdometryImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/RGBDOdometryJacobianImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/Registration.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/RegistrationImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/TransformationConverter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/kernel/TransformationConverterImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/odometry/RGBDOdometry.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/registration/Feature.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/registration/Registration.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/registration/RobustKernel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/registration/RobustKernelImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/registration/TransformationEstimation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/slac/ControlGrid.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/slac/FillInLinearSystemImpl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/slac/SLACOptimizer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/slac/Visualization.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/slam/Frame.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/t/pipelines/slam/Model.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/CPUInfo.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/CompilerInfo.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Console.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Download.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Eigen.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Extract.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/ExtractZIP.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/FileSystem.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Helper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/IJsonConvertible.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/ISAInfo.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Logging.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/MiniVec.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Optional.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Overload.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Parallel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/ParallelScan.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Preprocessor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/ProgressBar.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/ProgressReporters.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Random.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/utility/Timer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/app/Viewer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Application.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/BitmapWindowSystem.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Button.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Checkbox.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Color.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/ColorEdit.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Combobox.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Dialog.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Events.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/FileDialog.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Font.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/GLFWWindowSystem.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Gui.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/ImageWidget.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/ImguiFilamentBridge.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Label.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Label3D.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Layout.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/ListView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Menu.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/MenuBase.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/MenuImgui.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/MenuMacOS.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Native.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/NumberEdit.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/PickPointsInteractor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/ProgressBar.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/RadioButton.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/SceneWidget.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Slider.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/StackedWidget.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/TabControl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Task.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/TextEdit.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Theme.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/ToggleSwitch.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/TreeView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/UIImage.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Util.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/VectorEdit.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Widget.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/WidgetProxy.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/WidgetStack.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/Window.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/gui/WindowSystem.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/Camera.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/CameraInteractorLogic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/CameraSphereInteractorLogic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/ColorGrading.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/Gradient.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/IBLRotationInteractorLogic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/Light.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/LightDirectionInteractorLogic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/Material.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/MaterialModifier.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/MaterialRecord.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/MatrixInteractorLogic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/Model.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/ModelInteractorLogic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/Open3DScene.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/RenderToBuffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/Renderer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/RendererHandle.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/RendererStructs.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/RotationInteractorLogic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/Scene.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/View.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentCamera.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentEngine.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentEntitiesMods.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentGeometryBuffersBuilder.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentRenderToBuffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentRenderer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentResourceManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentScene.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/rendering/filament/FilamentView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/GeometryRenderer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/ImageMaskShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/ImageShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/NormalShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/PhongShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/PickingShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/RGBDImageShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/Shader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/ShaderWrapper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/Simple2DShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/SimpleBlackShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/SimpleShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/TexturePhongShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/shader/TextureSimpleShader.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/utility/ColorMap.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/utility/Draw.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/utility/DrawGeometry.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/utility/GLHelper.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/utility/PointCloudPicker.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/utility/SelectionPolygon.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/utility/SelectionPolygonVolume.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/GuiSettingsModel.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/GuiSettingsView.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/GuiVisualizer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/GuiWidgets.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/MessageProcessor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/O3DVisualizer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/O3DVisualizerSelections.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/RenderOption.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/RenderOptionWithEditing.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/ViewControl.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/ViewControlWithCustomAnimation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/ViewControlWithEditing.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/ViewParameters.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/ViewTrajectory.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/Visualizer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/VisualizerWithCustomAnimation.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/VisualizerWithEditing.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/VisualizerWithKeyCallback.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/visualizer/VisualizerWithVertexSelection.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/webrtc_server/BitmapTrackSource.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/webrtc_server/HttpServerRequestHandler.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/webrtc_server/ImageCapturer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/webrtc_server/PeerConnectionManager.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/webrtc_server/VideoFilter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/webrtc_server/VideoScaler.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/open3d-devel-windows-amd64-0.19.0/include/open3d/visualization/webrtc_server/WebRTCWindowSystem.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/cli/cli_app.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core/app_controller.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core/calibration_task.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core/logger.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core/merger_task.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core/real_time_reconstruction_task.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core/reconstruction_task.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core/system_params.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/core/task_manager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/gui/app.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/gui/calibration_page.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/gui/log_panel.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/gui/main_window.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/gui/params_panel.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/gui/reconstruction_page.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/gui/task_panel.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/imgui/backends/imgui_impl_glfw.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/imgui/backends/imgui_impl_opengl3.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/imgui/imgui.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/imgui/imgui_demo.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/imgui/imgui_draw.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/imgui/imgui_tables.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third_party/imgui/imgui_widgets.cpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "EXECUTABLE"
+}

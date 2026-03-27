@@ -1,5 +1,7 @@
 #include "system_params.h"
 
+#include <string>
+
 #include "app_controller.h"
 
 SystemParams::SystemParams(const std::string &config_path, const Mode &mode)
@@ -108,14 +110,74 @@ void SystemParams::loadConfigFile()
 
     // Mode parameters
     this->save_cloud_flag_ = config_["mode"]["saveCloudFlag"].get<bool>();
+    //前两行是老代码，使用了 .get<int>() 和 .get<bool>().直接跑到 JSON 里找 roiCol2 和 saveCloudFlag。
+    //2026.1.18 add
+    if (config_.contains("mode"))
+    {
+        auto &m = config_["mode"];   //m来代表 config_["mode"],'&'意味着 m 只是个别名
+        this->save_line_cloud_flag_ = m.value("saveLineCloudFlag", false);
+        //.value() 函数,去找 "saveLineCloudFlag"，如果找到了，就用 JSON 里的值,如果没有找到，就用第二个参数 false 作为默认值
+
+        int stride = m.value("lineCloudStride", 1);
+        if (stride < 1) stride = 1;
+        this->line_cloud_stride_ = stride;
+
+        this->line_cloud_file_type_ = m.value("lineCloudFileType", std::string("ply_binary"));
+    }
+    else
+    {
+        this->save_line_cloud_flag_ = false;
+        this->line_cloud_stride_ = 1;
+        this->line_cloud_file_type_ = "ply_binary";
+    }
+    //2026.1.18 add finish
+
+    //2026.3.1 add udp
+    if (config_.contains("udp"))
+    {
+        auto &u = config_["udp"];
+        this->udp_send_enabled_ = u.value("enabled", true);
+        this->udp_host_ = u.value("host", std::string("127.0.0.1"));
+        this->udp_port_ = u.value("port", 9000);
+        this->udp_mtu_ = u.value("mtu", 1400);
+    }
+    else
+    {
+        this->udp_send_enabled_ = true;
+        this->udp_host_ = "127.0.0.1";
+        this->udp_port_ = 9000;
+        this->udp_mtu_ = 1400;
+    }
+    //2026.3.1 add finish
+
     this->set_roi_flag_ = config_["mode"]["setRoiFlag"].get<bool>();
     this->select_entire_frame_ = config_["mode"]["selectEntireFrame"].get<bool>();
+
+
 
     this->hv_program_params_.hv_laser1_path = this->hv_program_params_.hv_calibration_images_dir + "/laser01";
     this->hv_program_params_.hv_laser2_path = this->hv_program_params_.hv_calibration_images_dir + "/laser02";
     this->hv_program_params_.hv_movement1_path = this->hv_program_params_.hv_calibration_images_dir + "/caltab_at_position_1";
     this->hv_program_params_.hv_movement2_path = this->hv_program_params_.hv_calibration_images_dir + "/caltab_at_position_2";
+
+    if(config_.contains("realtime"))
+    {
+        auto &rt_config = config_["realtime"];
+        rt_params_.host = rt_config.value("host", "");
+        rt_params_.user = rt_config.value("user", "");
+        rt_params_.port = rt_config.value("port", 22);
+        rt_params_.password = rt_config.value("password", "");
+        //rt_params_.remote_data_dir = rt_config.value("remote_data_dir", "");
+        std::string remote_dir = rt_config.value("remote_data_dir", "");
+        rt_params_.remote_data_dir = std::filesystem::path(remote_dir).generic_string();
+        
+        rt_params_.scan_interval_seconds = rt_config.value("scan_interval_seconds", 5);
+        rt_params_.local_simulation_dir = rt_config.value("local_simulation_dir", "");
+        rt_params_.local_temp_dir = rt_config.value("local_temp_dir", "");
+    }
+
 }
+
 
 void SystemParams::loadPosesFiles()
 {
@@ -250,8 +312,22 @@ void SystemParams::initFinished()
     event.params.reconstruction_roi_col2 = this->hv_program_params_.hv_reconstruction_roi_col2[0].I();
 
     event.params.save_cloud_flag = this->save_cloud_flag_;
+
+    //2026.1.18 add  在底层加了这三个单线点云的参数，还得把它们“装进包裹”里发出去
+    event.params.save_line_cloud_flag = this->save_line_cloud_flag_;
+    event.params.line_cloud_stride = this->line_cloud_stride_;
+    safe_copy(event.params.line_cloud_file_type, this->line_cloud_file_type_.c_str(), sizeof(event.params.line_cloud_file_type));
+    //2026.1.18 add finish
+
+    //2026.3.1 add udp
+    event.params.udp_send_enabled = this->udp_send_enabled_;
+    safe_copy(event.params.udp_host, this->udp_host_.c_str(), sizeof(event.params.udp_host));
+    event.params.udp_port = this->udp_port_;
+    event.params.udp_mtu = this->udp_mtu_;
+    //2026.3.1 add finish
+
     event.params.set_roi_flag = this->set_roi_flag_;
     event.params.select_entire_frame = this->select_entire_frame_;
-
+    
     AppController::instance().publish("params_init_finished", std::make_any<ParamsInitEvent>(event));
 }

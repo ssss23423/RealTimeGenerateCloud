@@ -1,41 +1,61 @@
 {
-    "global": {
-        "datatype": ".bil.zst",
-        "imageWidth": 1280,
-        "imageHeight": 800,
-        "fps": 120,
-        "caltabDescription": "data/caltab_400.descr",
-        "poses": "data/saved_poses"
-    },
-    "camera": {
-        "cx": 665.103,
-        "cy": 412.286,
-        "sx": 4.68544e-06,
-        "sy": 4.7e-06,
-        "focus": 0.0111401
-    },
-    "reconstruction": {
-        "imageData": "data/imgs/corrected",
-        "parsedInsData": "data/ins/parsed/parsed_check_fix_ins.xlsx",
-        "parsedLogData": "data/logs/parsed/output.csv",
-        "outputCloudsDir": "data/clouds",
-        "minThreshold": 100,
-        "roiRow1": 0,
-        "roiCol1": 0,
-        "roiRow2": 0,
-        "roiCol2": 0
-    },
-    "calibration": {
-        "caltabImagesDir": "data/caltab",
-        "imageCount": 59,
-        "minThreshold": 169,
-        "stepCount": 45,
-        "thickness": 0.01,
-        "maxLightPlaneError": 0.05
-    },
-    "mode": {
-        "saveCloudFlag": true,
-        "setRoiFlag": false,
-        "selectEntireFrame": true
-    }
+  "global": {
+    "datatype": ".bil.zst",
+    "imageWidth": 1280,
+    "imageHeight": 800,
+    "fps": 120,
+    "caltabDescription": "data/caltab_400.descr",
+    "poses": "data/saved_poses"
+  },
+  "camera": {
+    "cx": 665.103,
+    "cy": 412.286,
+    "sx": 4.68544e-06,
+    "sy": 4.7e-06,
+    "focus": 0.0111401
+  },
+  "reconstruction": {
+    "imageData": "data/imgs/corrected",
+    "parsedInsData": "data/ins/parsed/parsed_check_fix_ins.xlsx",
+    "parsedLogData": "data/logs/parsed/output.csv",
+    "outputCloudsDir": "data/clouds",
+    "minThreshold": 50,
+    "roiRow1": 0,
+    "roiCol1": 0,
+    "roiRow2": 0,
+    "roiCol2": 0
+  },
+  "calibration": {
+    "caltabImagesDir": "data/caltab",
+    "imageCount": 59,
+    "minThreshold": 169,
+    "stepCount": 45,
+    "thickness": 0.01,
+    "maxLightPlaneError": 0.05
+  },
+  "mode": {
+    "saveCloudFlag": false,
+    "setRoiFlag": false,
+    "selectEntireFrame": true,
+
+    "saveLineCloudFlag": true,
+    "lineCloudStride": 1,
+    "lineCloudFileType": "ply_binary"
+  },
+  "realtime": {
+    "host": "192.168.56.10",
+    "user": "camera",
+    "port": 9527,
+    "password": "309311",
+    "remote_data_dir": "/home/camera/imgs/",
+    "local_temp_dir": "D:/code/RealTimeGenerateCloud/data/temp_scan_data/",
+    "scan_interval_seconds": 1,
+    "local_simulation_dir": "D:/code/RealTimeGenerateCloud/data/videos"
+  },
+  "udp": {
+    "enabled": true,
+    "host": "10.45.243.129",
+    "port": 9000,
+    "mtu": 1400
+  }
 }

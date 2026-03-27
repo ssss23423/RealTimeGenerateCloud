@@ -38,7 +38,7 @@ public:
                                        running_.store(false); });
     }
 
-    void stop()
+    virtual void stop()
     {
         if (!running_.load())
         {
