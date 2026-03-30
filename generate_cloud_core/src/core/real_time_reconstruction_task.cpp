@@ -294,7 +294,7 @@ void RealTimeReconstructionTask::consumerLoop()
     // std::cout << "ConsumerLoop enter" << std::endl;
     // std::cout << "running_.load() is: " << running_.load() << std::endl;
     // std::cout << "ready_files_queue_.empty() is: " << std::endl;
-    while(running_.load() || !ready_files_queue_.empty())
+    while(true)  //3.30:解决-队列无锁读取导致的数据竞争
     {
         std::string file_to_process;
         {
@@ -439,7 +439,8 @@ std::vector<std::string> RealTimeReconstructionTask::listRemoteDirectories()
         std::string error_msg = "sftp_opendir failed for " + remote_dir_path + " : Error code = " + std::to_string(sftp_get_error(sftp_)) 
                                         + ", Message= " + ssh_get_error(session_);
         AppController::instance().getLogger().log(error_msg + rt_params.remote_data_dir, Logger::LogLevel::Error);
-        return directories;
+        //return directories;  // 3.30：不再 return 空数组，而是直接抛出异常！解决只是返回空，不抛异常，连接标记仍是 true，后续会一直“无新目录”轮询。
+        throw std::runtime_error("SFTP Connection Lost: Cannot open directory.");
     }
 
     while((attributes = sftp_readdir(sftp_, dir)) != NULL)
