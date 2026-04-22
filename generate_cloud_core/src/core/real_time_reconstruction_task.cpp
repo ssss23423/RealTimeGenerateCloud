@@ -31,16 +31,7 @@ RealTimeReconstructionTask::RealTimeReconstructionTask(std::string id) : Task(id
 
 RealTimeReconstructionTask::~RealTimeReconstructionTask()
 {
-    if(running_.load())
-    {
-        stop();
-    }
-
-    if(consumer_thread_.joinable())
-    {
-        consumer_thread_.join();
-    }
-
+    stop();
     disconnect();
 }
 
@@ -96,7 +87,12 @@ void RealTimeReconstructionTask::stop()
     queue_cv_.notify_all(); 
     
     // 3. 调用父类的 stop (如果有的话，看你的 Task 基类设计)
-    Task::stop(); 
+    if(task_thread_.joinable())
+    {
+        task_thread_.join();
+    }
+
+    finished_.store(false);
 }
 
 void RealTimeReconstructionTask::producerLoop()
@@ -320,14 +316,18 @@ void RealTimeReconstructionTask::consumerLoop()
         {
             AppController::instance().getLogger().log("Consumer picked up for reconstruction: " + file_to_process);
             reconstructionSingleFile(file_to_process);
-            // try
-            // {
-            //     std::filesystem::remove(file_to_process);
-            // }
-            // catch(const std::filesystem::filesystem_error& e)
-            // {
-            //     AppController::instance().getLogger().log("Failed to delete temp file" + file_to_process + " : " + e.what(), Logger::LogLevel::Warn);
-            // }
+            // 2026.4.22 add：消费者处理完了，顺便把这个文件给删了，腾出空间
+            try
+            {
+                if(std::filesystem::exists(file_to_process))
+                {
+                    std::filesystem::remove(file_to_process);
+                }
+            }
+            catch(const std::filesystem::filesystem_error& e)
+            {
+                AppController::instance().getLogger().log("Failed to delete temp file " + file_to_process + " : " + e.what(), Logger::LogLevel::Warn);
+            }
         }
     }
 }

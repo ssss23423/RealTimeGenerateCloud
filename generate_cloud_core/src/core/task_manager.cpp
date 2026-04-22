@@ -37,7 +37,9 @@ void TaskManager::run()
                     else
                     {
                         AppController::instance().getLogger().log("Task " + id + " finished and removed.");
+                        Task *finishedTask = task;
                         it = tasks_.erase(it);
+                        delete finishedTask;
                     }
                 }
                 else
@@ -123,6 +125,7 @@ void TaskManager::stopTask(std::string id)
     {
         AppController::instance().getLogger().log("Stopping Task " + id);
         taskToStop->stop();
+        delete taskToStop;
     }
 }
 
