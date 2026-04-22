@@ -6,6 +6,7 @@
 
 #include <algorithm>
 #include <fstream>
+#include <iterator>
 #include <vector>
 #include <set>
 
@@ -164,6 +165,50 @@ void RealTimeReconstructionTask::producerLoop()
             {
                 std::sort(new_dirs.begin(), new_dirs.end());
                 AppController::instance().getLogger().log("Found " + std::to_string(new_dirs.size()) + "new scans to process.");
+            // 2026.4.22：丢包策略核心代码,我们从新文件列表的末尾（最新的）往前找，找到第一个“准备好”的文件夹就立刻处理它，剩下的统统丢弃
+                std::vector<std::string> ready_dirs;
+                size_t skipped_older_count = 0;
+                for(auto it = new_dirs.rbegin(); it != new_dirs.rend(); ++it)
+                {
+                    const auto& candidate_dir = *it;
+                    if(processed_dirs.find(candidate_dir) != processed_dirs.end())
+                    {
+                        AppController::instance().getLogger().log("Directory already processed: " + candidate_dir);
+                        continue;
+                    }
+
+                    std::string candidate_file_path = rt_params.remote_data_dir;
+                    if(!candidate_file_path.empty() && candidate_file_path.back() != '/'){
+                        candidate_file_path += '/';
+                    }
+                    candidate_file_path += candidate_dir;
+                    candidate_file_path += '/';
+                    candidate_file_path += candidate_dir;
+                    candidate_file_path += ".bil.zst";
+
+                    if(isFileReadyToDownload(candidate_file_path))
+                    {
+                        ready_dirs.push_back(candidate_dir);
+                        skipped_older_count = static_cast<size_t>(std::distance(new_dirs.begin(), it.base() - 1));
+                        break;
+                    }
+
+                    AppController::instance().getLogger().log("New scan is not ready yet: " + candidate_dir, Logger::LogLevel::Warn);
+                }
+
+                if(ready_dirs.empty())
+                {
+                    AppController::instance().getLogger().log("No ready new scan directories found. Waiting for next scan interval.", Logger::LogLevel::Warn);
+                    new_dirs.clear();
+                }
+                else
+                {
+                    if(skipped_older_count > 0)
+                    {
+                        AppController::instance().getLogger().log("Skipping " + std::to_string(skipped_older_count) + " older remote frames to keep real-time!");
+                    }
+                    new_dirs = ready_dirs;
+                }
                 
                 // ==========================================
                 // 🚀 【新增：源头极致丢包策略】 2026.3.16 add 🚀
