@@ -718,22 +718,25 @@ void ReconstructionTask::reconstruction()
                 //   - full_model: accumulates all profiles via SetProfileSheetOfLight
                 //   - line_model: num_profiles=1, reused each frame to measure current profile once
                 // ==========
-                HTuple hv_full_model_id;
                 HTuple hv_line_model_id;
+                const bool build_full_model = SystemParams::instance().save_cloud_flag_;
 
-                // full model
-                HTuple frame_nums;
-                frame_nums[0] = frame_count;
-                CreateSheetOfLightModel(ho_profile_region,
-                                        ((HTuple("min_gray").Append("num_profiles")).Append("ambiguity_solving")),
-                                        (SystemParams::instance().hv_program_params_.hv_reconstruction_min_threshold.TupleConcat(frame_nums)).TupleConcat("first"),
-                                        &hv_full_model_id);
-                SetSheetOfLightParam(hv_full_model_id, "calibration", "xyz");
-                SetSheetOfLightParam(hv_full_model_id, "scale", "mm");
-                SetSheetOfLightParam(hv_full_model_id, "camera_parameter", SystemParams::instance().hv_system_poses_.hv_camera_params);
-                SetSheetOfLightParam(hv_full_model_id, "camera_pose", SystemParams::instance().hv_system_poses_.hv_camera_pose);
-                SetSheetOfLightParam(hv_full_model_id, "lightplane_pose", SystemParams::instance().hv_system_poses_.hv_light_plane_poses);
-                // Do NOT set "movement_pose" as a whole array here; we pass per-frame pose to SetProfileSheetOfLight.
+                HTuple hv_full_model_id;
+                if (build_full_model)
+                {
+                    HTuple frame_nums;
+                    frame_nums[0] = frame_count;
+                    CreateSheetOfLightModel(ho_profile_region,
+                                            ((HTuple("min_gray").Append("num_profiles")).Append("ambiguity_solving")),
+                                            (SystemParams::instance().hv_program_params_.hv_reconstruction_min_threshold.TupleConcat(frame_nums)).TupleConcat("first"),
+                                            &hv_full_model_id);
+                    SetSheetOfLightParam(hv_full_model_id, "calibration", "xyz");
+                    SetSheetOfLightParam(hv_full_model_id, "scale", "mm");
+                    SetSheetOfLightParam(hv_full_model_id, "camera_parameter", SystemParams::instance().hv_system_poses_.hv_camera_params);
+                    SetSheetOfLightParam(hv_full_model_id, "camera_pose", SystemParams::instance().hv_system_poses_.hv_camera_pose);
+                    SetSheetOfLightParam(hv_full_model_id, "lightplane_pose", SystemParams::instance().hv_system_poses_.hv_light_plane_poses);
+                    // Do NOT set "movement_pose" as a whole array here; we pass per-frame pose to SetProfileSheetOfLight.
+                }
 
                 // line model (1 profile)
                 HTuple one_profile_nums;
@@ -808,7 +811,10 @@ void ReconstructionTask::reconstruction()
                     // Get disparity for current profile and append to full model
                     HObject ho_disparity;
                     GetSheetOfLightResult(&ho_disparity, hv_line_model_id, "disparity");
-                    SetProfileSheetOfLight(ho_disparity, hv_full_model_id, movement_pose_frame);
+                    if (build_full_model)
+                    {
+                        SetProfileSheetOfLight(ho_disparity, hv_full_model_id, movement_pose_frame);
+                    }
 
                     // ===== Optional: save per-line model (stride-controlled) =====
                     if (SystemParams::instance().save_line_cloud_flag_ && ((frame % line_stride) == 0))
@@ -864,14 +870,14 @@ void ReconstructionTask::reconstruction()
                 bil_file.close();
 
                 // ===== Export full model (same as your original behavior) =====
-                HTuple hv_object_model_3d_id;
-                GetSheetOfLightResultObjectModel3d(hv_full_model_id, &hv_object_model_3d_id);
-
-                HTuple hv_object_model_affine_trans;
-                RigidTransObjectModel3d(hv_object_model_3d_id, hv_pose_trans, &hv_object_model_affine_trans);
-
-                if (SystemParams::instance().save_cloud_flag_)
+                if (build_full_model)
                 {
+                    HTuple hv_object_model_3d_id;
+                    GetSheetOfLightResultObjectModel3d(hv_full_model_id, &hv_object_model_3d_id);
+
+                    HTuple hv_object_model_affine_trans;
+                    RigidTransObjectModel3d(hv_object_model_3d_id, hv_pose_trans, &hv_object_model_affine_trans);
+
                     // Full cloud: <output_dir>/<stem>/<stem>_full.obj
                     std::filesystem::path full_save = out_dir / (stem + "_full.obj");
                     HTuple save_path = full_save.string().c_str();
@@ -882,7 +888,10 @@ void ReconstructionTask::reconstruction()
                 }
 
                 // Clear models to avoid handle accumulation
-                ClearSheetOfLightModel(hv_full_model_id);
+                if (build_full_model)
+                {
+                    ClearSheetOfLightModel(hv_full_model_id);
+                }
                 ClearSheetOfLightModel(hv_line_model_id);
 
                 if (!shouldContinue())
